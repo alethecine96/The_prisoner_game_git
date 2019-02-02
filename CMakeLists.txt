@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.4)
 
 # Define sources and executable
 
-set(EXECUTABLE_NAME "The_Prisoner_Game")
-add_executable(${EXECUTABLE_NAME} main.cpp menu.cpp menu.h Inventory.cpp Mappa.cpp Mappa.h Player.cpp Player.h Eyes.cpp Eyes.h MapLoader.cpp MapLoader.h Projectile.cpp Projectile.h Enemy.cpp Enemy.h Drawable.cpp Drawable.h Observer.cpp Observer.h)
+set(EXECUTABLE_NAME "menu")
+add_executable(${EXECUTABLE_NAME} main.cpp menu.cpp menu.h Inventory.cpp Mappa.cpp Mappa.h Player.cpp Player.h Eyes.cpp Eyes.h MapLoader.cpp MapLoader.h Projectile.cpp Projectile.h Enemy.cpp Enemy.h Drawable.cpp Drawable.h Observer.cpp Observer.h Coin.cpp Coin.h Powerup.cpp Powerup.h)
 
 # Detect and add SFML
 
