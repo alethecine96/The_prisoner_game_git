@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Project"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="The_Prisoner_Game">
+				<Option output="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/The_Prisoner_Game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 The_Prisoner_Game"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="The_Prisoner_Game/fast">
+				<Option output="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/The_Prisoner_Game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 The_Prisoner_Game/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Drawable.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Drawable.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Enemy.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Enemy.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Eyes.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Eyes.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Inventory.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/MapLoader.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/MapLoader.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Mappa.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Mappa.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Observer.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Observer.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Player.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Player.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Projectile.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Projectile.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/main.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/menu.cpp">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/menu.h">
+			<Option target="The_Prisoner_Game"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake_modules/FindSFML.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

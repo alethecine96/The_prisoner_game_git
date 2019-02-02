@@ -1,0 +1,3 @@
+/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/The_Prisoner_Game.dir
