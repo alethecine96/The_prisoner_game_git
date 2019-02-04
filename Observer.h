@@ -20,9 +20,9 @@ public:
     }
 
 
-    void CollisionPlayer();
+    int CollisionPlayer();
 
-    void CollisionProjectile(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1);
+    int CollisionProjectile(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1);
 
     void CollisionPickup(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1);
 
@@ -31,6 +31,7 @@ public:
 private:
     std::vector<Drawable*> *array;
     Player *player;
+    int numEnemies=3;
 
 
 

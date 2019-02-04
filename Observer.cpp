@@ -10,10 +10,11 @@
 using namespace std;
 
 
-void Observer::CollisionPlayer()
+int Observer::CollisionPlayer()
 {
 
     int i=0;
+    int playerlife=player->getHp();
     std::vector<Drawable*>::const_iterator iter;
     bool collision=false;
     for(iter=array->begin(); iter!=array->end(); iter++)
@@ -50,17 +51,19 @@ void Observer::CollisionPlayer()
             {
                 player->setHp(player->getHp() - (*array->at(i)).getDamage());
                 std::cout<<"Il player ha "<<player->getHp()<<" di vita"<<std::endl;
+                playerlife=player->getHp();
             }
         }
         i++;
     }
-
+    return playerlife;
 }
 
-void Observer::CollisionProjectile(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1) {
+int Observer::CollisionProjectile(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1) {
     bool collision=false;
 
     int i=0;
+
     if(vector->empty()){}
     else{
 
@@ -109,6 +112,7 @@ void Observer::CollisionProjectile(std::vector<Drawable*> *vector, std::vector<D
             }
         }
 
+        //Cancellazione proiettili
         std::vector<Drawable*>::const_iterator iter2;
         int projectile_counter=0;
         for(iter2=vector->begin(); iter2!=vector->end(); iter2++){
@@ -119,17 +123,20 @@ void Observer::CollisionProjectile(std::vector<Drawable*> *vector, std::vector<D
             projectile_counter++;
         }
 
+        //Cancellazione nemici e drop coin
         int j=0;
         std::vector<Drawable*>::const_iterator iter3;
         for(iter3=array->begin(); iter3!=array->end(); iter3++){
             if(!array->at(j)->getAlive()){
                 vector1->push_back(new Coin((*array->at(j)).getPositionX(), (*array->at(j)).getPositionY())); //drop coin
+                numEnemies=numEnemies-1;
                 array->erase(iter3);
                 break;
             }
             j++;
         }
 
+    return numEnemies;
     }
 
 void Observer::CollisionPickup(std::vector<Drawable *> *vector, std::vector<Drawable*> *vector1) {
@@ -245,12 +252,13 @@ void Observer::CollisionPickup(std::vector<Drawable *> *vector, std::vector<Draw
 void Observer::MoveEnemy(){
     //Movimento nemici
     std::vector<Drawable *>::const_iterator iter1;
-    int range=75;
     int direction;
     int j=0;
     int i=0;
     for (iter1 = array->begin(); iter1 != array->end(); iter1++) {
-        if(array->at(j)->getAggro()==false)
+        int line_of_sight=sqrt(pow(player->getPositionX()-array->at(j)->getPositionX(),2)+pow(player->getPositionY()-array->at(j)->getPositionY(),2));
+        std::cout<<line_of_sight<<std::endl;
+        if(array->at(j)->getAggro()==false || line_of_sight>100)
             (array->at(j))->move();
         else{
             if(player->getPositionX() == array->at(j)->getPositionX()){  //nel range di X
