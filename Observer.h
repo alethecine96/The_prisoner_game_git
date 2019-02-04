@@ -10,18 +10,27 @@
 #include <array>
 #include "Player.h"
 #include "Drawable.h"
+#include "Coin.h"
 
 class Observer {
 public:
-    Observer(std::array<Drawable*,4> *array){
+    Observer(std::vector<Drawable*> *array, Player *player){
         this->array=array;
+        this->player=player;
     }
 
-    void Notify();
-    bool Collision();
-    void Position_of_Player();
+
+    void CollisionPlayer();
+
+    void CollisionProjectile(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1);
+
+    void CollisionPickup(std::vector<Drawable*> *vector, std::vector<Drawable*> *vector1);
+
+    void MoveEnemy();
+
 private:
-    std::array<Drawable*,4> *array;
+    std::vector<Drawable*> *array;
+    Player *player;
 
 
 
