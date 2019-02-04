@@ -99,6 +99,7 @@ bool Enemy::getAlive() {
 }
 
 void Enemy::follow(int d){
+    direction=d;
     double l=4.5;
     double a= -pow(d,3)+ l*pow(d,2)-l*d;
     int b= round(-0.6*d+0.9);
