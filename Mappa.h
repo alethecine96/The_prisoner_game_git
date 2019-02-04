@@ -28,17 +28,23 @@
 class Mappa : public Drawable {
     // define the level with an array of tile indices
 public:
-    Mappa(std::array<Drawable*,4> *array,std::vector<Drawable*> *array1, int * m){
+    Mappa(std::vector<Drawable*> *array,std::vector<Drawable*> *array1, int * m, Player *player, std::vector<Drawable*> *array2, std::vector<Drawable*> *array3){
         this->array = array;
-        my_array=m;
         this->array1 = array1;
+        this->array2=array2;
+        this->array3=array3;
+        my_array=m;
+        this->player=player;
     }
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
 private:
     int *my_array;
-    std::array<Drawable*,4> *array;
-    std::vector<Drawable*> *array1;
+    std::vector<Drawable*> *array;   //nemici
+    std::vector<Drawable*> *array1;  //proiettili
+    std::vector<Drawable*> *array2;  //coin
+    std::vector<Drawable*> *array3;  //powerup
+    Player *player;
 };
 
 

@@ -28,7 +28,7 @@ int Drawable::getDirection(){
 
 }
 
-void Drawable::move(int d) {
+void Drawable::follow(int d) {
 
 }
 
@@ -40,10 +40,46 @@ int Drawable::getDamage() {
 
 }
 
+int Drawable::setDamage(int damage) {
+
+}
+
 bool Drawable::getAggro() {
 
 }
 
 int Drawable::setHp(int hp) {
+
+}
+
+bool Drawable::setAggro(bool aggro){
+
+}
+
+bool Drawable::setDestroy(bool destroy){
+
+}
+
+bool Drawable::getDestroy(){
+
+}
+
+bool Drawable::setAlive(bool alive) {
+
+}
+
+bool Drawable::getAlive(){
+
+}
+
+int Drawable::getPrice() {
+
+}
+
+bool Drawable::getHeal(){
+
+}
+
+bool Drawable::getGun(){
 
 }

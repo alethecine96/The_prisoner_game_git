@@ -14,6 +14,8 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
 
 
+    sf::Clock clock;
+    sf::Time elapsedtime = clock.getElapsedTime();
     sf::Texture m_tileset;
     sf::VertexArray m_vertices;
     int width=40;
@@ -56,22 +58,61 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
 
         target.draw(m_vertices,&m_tileset); //draw map
-        for(int i=0; i<4; i++)
-    {
-        target.draw(*array->at(i));        //draw the characters
-    }
+        target.draw(*player);
+        std::vector<Drawable*>::const_iterator iter;
+        int i=0;
+        if(array->empty()){}
+        else {
+            for (iter = array->begin(); iter != array->end(); iter++) {
+                target.draw(*array->at(i)); //draw the enemies
+                if(i+1<array->size()) {
+                    i++;
+                }
+                else{
+                    i=0;
+                }
+            }
 
-
-    std::vector<Drawable*>::const_iterator iter;
-    int i=0;
-    if(array1->empty()){}
-    else {
-
-        for (iter=array1->begin(); iter!=array1->end(); iter++) {
-
-            target.draw(*array1->at(i));
-            i++;
-            //std::cout<<"disegno"<<std::endl;
         }
+
+
+        std::vector<Drawable*>::const_iterator iter1;
+        int j=0;
+        if(array1->empty()){}
+        else {
+
+        for (iter1=array1->begin(); iter1!=array1->end(); iter1++) {
+
+            target.draw(*array1->at(j));
+            j++;
+            }
         }
+
+        std::vector<Drawable*>::const_iterator iter2;
+        int k=0;
+        if(array2->empty()){}
+        else {
+
+            for (iter2=array2->begin(); iter2!=array2->end(); iter2++) {
+
+                target.draw(*array2->at(k));
+                k++;
+            }
+        }
+
+        std::vector<Drawable*>::const_iterator iter3;
+        int l=0;
+        if(array3->empty()){}
+        else {
+
+            for (iter3=array3->begin(); iter3!=array3->end(); iter3++) {
+
+                target.draw(*array3->at(l));
+                l++;
+            }
+        }
+
+
+
+
 }
