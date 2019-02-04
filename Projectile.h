@@ -17,19 +17,23 @@ public:
     int speed;
     int direction;
     Eyes *eyes;
-    Projectile(int x, int y, int speed, Eyes *eyes){
+    bool destroy= false;
+    Projectile(int x, int y, int speed, Eyes *eyes, int direction){
         this-> x=x;
         this-> y=y;
         this-> speed=speed;
         this-> eyes=eyes;
+        this->direction=direction;
 
     }
 
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    void move (int d);
+    void move ();
     int getPositionX();
     int getPositionY();
+    virtual bool setDestroy(bool destroy);
+    virtual bool getDestroy();
 };
 
 
