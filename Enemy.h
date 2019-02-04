@@ -17,17 +17,21 @@ public:
     int x;
     int speed;
     int damage;
+    int hp;
+    bool aggro=false;
     int direction;
     int step;
-    bool aggro=true;
+    bool alive=true;
     Eyes *eyes;
+    Player *player;
 
 
-    Enemy(int x,int y, int speed, int damage, Eyes *eyes){
+    Enemy(int x,int y, int speed, int damage, int hp, Eyes *eyes){
         this->x=x;
         this->y=y;
         this->speed=speed;
         this->damage=damage;
+        this->hp=hp;
         direction=0;
         step=0;//FIXME enum
         this->eyes = eyes;
@@ -38,14 +42,22 @@ public:
     virtual int  getPositionX();
     virtual int  getPositionY();
 
-
-
-    void move();
-
     virtual int getDamage();
 
     virtual bool getAggro();
 
+    virtual bool setAggro(bool aggro);
+
+    virtual int getHp();
+
+    virtual int setHp(int hp);
+
+    void move();
+
+    void follow(int d);
+
+    virtual bool setAlive(bool alive);
+    virtual bool getAlive();
 };
 
 

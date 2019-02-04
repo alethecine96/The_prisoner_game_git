@@ -36,10 +36,9 @@ void Enemy::move() {
 
     int i=0;
     float l=4.5;
-    if(i==rand()%20) {
+    if(i==rand()%20) {     //Quando non è triggerato deve randomizzare, se aggrato deve seguire quello che si dice
         int v = rand() % 4;
         direction = v;
-        return; // Enemy eredita da GameCharacter
     }
 
 
@@ -59,8 +58,6 @@ void Enemy::move() {
 
     step=(step+1)%3;  //FIXME make me slower
 
-
-
 }
 
 int Enemy::getPositionX(){
@@ -71,10 +68,51 @@ int Enemy::getPositionY(){
     return y;
 }
 
+
 int Enemy::getDamage() {
     return damage;
 }
 
 bool Enemy::getAggro() {
     return aggro;
+}
+
+bool Enemy::setAggro(bool aggro) {
+    Enemy::aggro=aggro;
+}
+
+int Enemy::getHp() {
+    return hp;
+}
+
+int Enemy::setHp(int hp) {
+    Enemy::hp=hp;
+}
+
+
+bool Enemy::setAlive(bool alive) {
+    Enemy::alive=alive;
+}
+
+bool Enemy::getAlive() {
+    return alive;
+}
+
+void Enemy::follow(int d){
+    double l=4.5;
+    double a= -pow(d,3)+ l*pow(d,2)-l*d;
+    int b= round(-0.6*d+0.9);
+
+    int j= this->x + this->speed*a;
+    int k= this->y + this->speed*b;
+
+
+    if(!(*this->eyes).isWalkable(j,k,d))
+        return;
+
+    this->x=j;
+    this->y=k;
+
+    step=(step+1)%3;  //FIXME make me slower
+
 }
