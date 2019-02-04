@@ -51,6 +51,13 @@ int Player::getPositionX(){
 int Player::getPositionY(){
     return y;
 }
+int Player::getDirection() {
+    return direction;
+}
+
+void Player::shoot(){
+    array1->push_back(new Projectile(x,y,5, eyes, direction));
+}
 
 int Player::getHp() {
     return hp;
@@ -60,11 +67,10 @@ int Player::setHp(int hp) {
     Player::hp=hp;
 }
 
-int Player::getDirection() {
-    return direction;
+int Player::getDamage() {
+    return damage;
 }
 
-void Player::shoot(){
-    array1->push_back(new Projectile(x,y,5,eyes));
-
+int Player::setDamage(int damage) {
+    Player::damage=damage;
 }

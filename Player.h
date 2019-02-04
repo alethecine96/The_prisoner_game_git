@@ -22,18 +22,21 @@ public:
     int hp;
     int direction;
     int step;
+    int damage=5;
+    int wallet=95;
     Eyes *eyes;
     std::vector<Drawable*> *array1;
 
-    Player(int x,int y,int hp, int speed,Eyes *eyes,std::vector<Drawable*> *array1){
+    Player(int x,int y, int speed, int hp, Eyes *eyes,std::vector<Drawable*> *array1){
         this->x=x;
         this->y=y;
-        this->hp=hp;
         this->speed=speed;
+        this->hp=hp;
         direction=0;
         step=0;//FIXME enum
         this->eyes = eyes;
         this->array1=array1;
+
     };
 
     virtual int  getPositionX();
@@ -49,6 +52,12 @@ public:
     virtual int getHp();
 
     virtual int setHp(int hp);
+
+    virtual int getDamage();
+
+    virtual int setDamage(int damage);
+
+private:
 };
 
 
