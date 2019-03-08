@@ -218,7 +218,6 @@ int main()
                             {
                                 array_of_enemies.at(k)->move();
                             }
-                            else{array_of_enemies.at(k)->setDirection()}
                         }
                         if(array_of_enemies.at(k)->getDirection()==1)
                         {
