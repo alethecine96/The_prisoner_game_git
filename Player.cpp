@@ -30,15 +30,10 @@ void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 }
 
 void Player::move(int a, int b) {
-
-    int j = this->x + this->speed *a;  //Cordinate future ancora incerte
-    int k = this->y + this->speed *b;
     direction = (-3*b+a+3*abs(b)+3*abs(a))/2;  // 0 down,1 left, 2 right, 3 up
-    if(!(*this->eyes).isWalkable(j,k,direction))
-        return;
+        this->x+=this->speed*a;
+        this->y+=this->speed*b;
 
-        this->x=j;
-        this->y=k;
 
         step=(step+1)%3;  //FIXME make me slower
 
@@ -51,26 +46,33 @@ int Player::getPositionX(){
 int Player::getPositionY(){
     return y;
 }
-int Player::getDirection() {
-    return direction;
-}
 
 void Player::shoot(){
-    array1->push_back(new Projectile(x,y,5, eyes, direction));
+    Projectile_vector->push_back(new Projectile(x,y,5,direction));
 }
 
-int Player::getHp() {
-    return hp;
-}
-
+/*
 int Player::setHp(int hp) {
     Player::hp=hp;
+}
+*/
+
+int Player::setDamage(int damage) {
+    Player::damage=damage;
 }
 
 int Player::getDamage() {
     return damage;
 }
 
-int Player::setDamage(int damage) {
-    Player::damage=damage;
+int Player::getDirection() {
+    return direction;
+}
+
+void Player::move(int direction) {
+    strategy->strategy_move(direction,this);
+}
+
+void Player::setDirection(int direction) {
+    Player::direction=direction;
 }

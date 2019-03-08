@@ -10,6 +10,8 @@
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Player.h"
 #include "Enemy.h"
+#include "Powerup.h"
+#include "Coin.h"
 #include <iostream>
 #include <fstream>
 #include <iostream>
@@ -25,26 +27,33 @@
 #include <SFML/Graphics/VertexArray.hpp>
 #include <SFML/Graphics/Texture.hpp>
 
-class Mappa : public Drawable {
+class Mappa : public sf::Drawable {
     // define the level with an array of tile indices
 public:
-    Mappa(std::vector<Drawable*> *array,std::vector<Drawable*> *array1, int * m, Player *player, std::vector<Drawable*> *array2, std::vector<Drawable*> *array3){
-        this->array = array;
-        this->array1 = array1;
-        this->array2=array2;
-        this->array3=array3;
-        my_array=m;
+
+
+
+
+    Mappa(std::vector<Enemy*> *Enemy_vector,std::vector<Projectile*> *Projectile_vector, Player *player, std::vector<Coin*> *Coin_vector, std::vector<Powerup*> *Powerup_vector){
+        this->Enemy_vector = Enemy_vector;
+        this->Projectile_vector = Projectile_vector;
+        this->Coin_vector=Coin_vector;
+        this->Powerup_vector=Powerup_vector;
         this->player=player;
     }
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    void load(std::string filename, int size);
+    bool isWalkable(int x, int y,int direction);
+
 
 private:
-    int *my_array;
-    std::vector<Drawable*> *array;   //nemici
-    std::vector<Drawable*> *array1;  //proiettili
-    std::vector<Drawable*> *array2;  //coin
-    std::vector<Drawable*> *array3;  //powerup
+    std::vector<Enemy*> *Enemy_vector;   //nemici
+    std::vector<Projectile*> *Projectile_vector;  //proiettili
+    std::vector<Coin*> *Coin_vector;  //coin
+    std::vector<Powerup*> *Powerup_vector;  //powerup
     Player *player;
+    int *map;
+
 };
 
 

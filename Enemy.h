@@ -1,3 +1,4 @@
+
 //
 // Created by alessandro on 19/10/18.
 //
@@ -8,56 +9,44 @@
 #include <iostream>
 #include <array>
 #include "Player.h"
-#include "Drawable.h"
+#include "Entity.h"
+#include "GameCharacter.h"
 
-
-class Enemy : public Drawable {
+class Enemy : public GameCharacter {
 public:
-    int y;
-    int x;
-    int speed;
     int damage;
-    int hp;
     bool aggro=false;
     int direction;
     int step;
     bool alive=true;
-    Eyes *eyes;
     Player *player;
+    std::vector<Projectile*> *Projectile_vector;
+    Strategy *strategy;
 
 
-    Enemy(int x,int y, int speed, int damage, int hp, Eyes *eyes){
-        this->x=x;
-        this->y=y;
-        this->speed=speed;
+    Enemy(int x,int y, int speed,int hp, int damage, std::vector<Projectile*> *Projectile_vector, Strategy *strategy) : GameCharacter(x, y, speed, hp){
         this->damage=damage;
-        this->hp=hp;
         direction=0;
         step=0;//FIXME enum
-        this->eyes = eyes;
+        this->Projectile_vector=Projectile_vector;
+        this->strategy=strategy;
     };
 
 
-    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
-    virtual int  getPositionX();
-    virtual int  getPositionY();
-
-    virtual int getDamage();
-
-    virtual bool getAggro();
-
-    virtual bool setAggro(bool aggro);
-
-    virtual int getHp();
-
-    virtual int setHp(int hp);
-
+    void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    virtual int  getPositionX() override;
+    virtual int  getPositionY() override;
+    bool getAggro();
+    bool setAggro(bool aggro);
+    void move(bool canmove);
+    void follow(int d, bool canmove);
+    bool setAlive(bool alive);
+    bool getAlive();
+    int getSpeed();
+    int getDamage();
+    int getDirection();
+    void shoot();
     void move();
-
-    void follow(int d);
-
-    virtual bool setAlive(bool alive);
-    virtual bool getAlive();
 };
 
 

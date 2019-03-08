@@ -7,33 +7,30 @@
 
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
-#include "Drawable.h"
-#include "Eyes.h"
+#include "Entity.h"
 
-class Projectile : public Drawable {
+class Projectile : public Entity {
 
 public:
     int x,y;
     int speed;
     int direction;
-    Eyes *eyes;
     bool destroy= false;
-    Projectile(int x, int y, int speed, Eyes *eyes, int direction){
+    Projectile(int x, int y, int speed, int direction){
         this-> x=x;
         this-> y=y;
         this-> speed=speed;
-        this-> eyes=eyes;
         this->direction=direction;
 
     }
 
-    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
     void move ();
     int getPositionX();
     int getPositionY();
-    virtual bool setDestroy(bool destroy);
-    virtual bool getDestroy();
+    bool setDestroy(bool destroy) override;
+    bool getDestroy() override;
 };
 
 

@@ -32,7 +32,7 @@ void Enemy::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 }
 
 
-void Enemy::move() {
+void Enemy::move(bool canmove) {
 
     int i=0;
     float l=4.5;
@@ -45,12 +45,15 @@ void Enemy::move() {
     int a= -pow(direction,3)+ l*pow(direction,2)-l*direction;
     int b= round(-0.6*direction+0.9);
 
+    //std::cout << direction << "----" << j << "----" << k << std::endl;
+
+
+
     int j= this->x + this->speed*a;
     int k= this->y + this->speed*b;
 
-    //std::cout << direction << "----" << j << "----" << k << std::endl;
 
-    if(!(*this->eyes).isWalkable(j,k,direction))
+    if(!canmove)
         return;
 
     this->x=j;
@@ -59,18 +62,12 @@ void Enemy::move() {
     step=(step+1)%3;  //FIXME make me slower
 
 }
-
 int Enemy::getPositionX(){
     return x;
 }
 
 int Enemy::getPositionY(){
     return y;
-}
-
-
-int Enemy::getDamage() {
-    return damage;
 }
 
 bool Enemy::getAggro() {
@@ -81,15 +78,6 @@ bool Enemy::setAggro(bool aggro) {
     Enemy::aggro=aggro;
 }
 
-int Enemy::getHp() {
-    return hp;
-}
-
-int Enemy::setHp(int hp) {
-    Enemy::hp=hp;
-}
-
-
 bool Enemy::setAlive(bool alive) {
     Enemy::alive=alive;
 }
@@ -98,17 +86,17 @@ bool Enemy::getAlive() {
     return alive;
 }
 
-void Enemy::follow(int d){
+void Enemy::follow(int d, bool canmove){
     direction=d;
-    double l=4.5;
-    double a= -pow(d,3)+ l*pow(d,2)-l*d;
+    float l=4.5;
+    int a= -pow(d,3)+ l*pow(d,2)-l*d;
     int b= round(-0.6*d+0.9);
 
     int j= this->x + this->speed*a;
     int k= this->y + this->speed*b;
 
 
-    if(!(*this->eyes).isWalkable(j,k,d))
+    if(!canmove)
         return;
 
     this->x=j;
@@ -116,4 +104,29 @@ void Enemy::follow(int d){
 
     step=(step+1)%3;  //FIXME make me slower
 
+}
+
+int Enemy::getSpeed() {
+    return speed;
+}
+
+int Enemy::getDamage() {
+    return damage;
+}
+
+int Enemy::getDirection() {
+    return direction;
+}
+
+void Enemy::shoot(){
+    Projectile_vector->push_back(new Projectile(x,y,3,direction));
+}
+
+void Enemy::move(){
+    int i=0;
+    if(i==rand()%20) {     //Quando non è triggerato deve randomizzare, se aggrato deve seguire quello che si dice
+        int v = rand() % 4;
+        direction = v;
+    }
+    strategy->strategy_move(direction,this);
 }

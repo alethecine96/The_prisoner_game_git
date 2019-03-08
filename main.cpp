@@ -3,9 +3,8 @@
 #include <cmath>
 #include "menu.h"
 #include "Mappa.h"
-#include "MapLoader.h"
 #include "Enemy.h"
-#include "Observer.h"
+#include "Update.h"
 #include "Powerup.h"
 #include <array>
 
@@ -14,37 +13,34 @@ int main()
 
     int width=40;
     int heigth=36;
-    int tileSize=32;
+    std::vector<Projectile*> array_of_bullet;
 
-    int caricatore_proiettili=10;
+    std::vector<Coin*> array_of_coin;
+    //Strategy strategy;
+    Keyboard_Movement keyboard1;
 
-  //  Menu menu;
+    Player player(34,50 ,4, 100, &array_of_bullet, &keyboard1);
+    //player.SetStrategy(&keyboard1);
+    //player.PlayerInterface();
+    Keyboard_Movement *keyboard;
+    Random_Movement random_movement;
 
-//    menu.start();
-    MapLoader mapLoader;
-    int* mapArray = mapLoader.load("mappetta prova",width*heigth); //carica mappetta prova in mapArray
-
-    Eyes eyes(mapArray,width);  //gli occhi sono gli stessi per tutti
-
-    std::vector<Drawable*> array_of_bullet;
-
-    std::vector<Drawable*> array_of_coin;
-
-    Player player(250,50 ,4, 100, &eyes, &array_of_bullet);
-
-    std::vector<Drawable*> array_of_enemies; //Vettore DI Drawable (qui ci sono tutti gli oggetti disegnabili)
+    std::vector<Enemy*> array_of_enemies; //Vettore DI Entity (qui ci sono tutti gli oggetti disegnabili)
     //riempimento array SE SI AGGIUNGONO NEMICI CAMBIARE NUMENEMIES IN OBSERVER.H
-    array_of_enemies.push_back(new Enemy (50,50 ,1, 1, 10, &eyes)); // posX, posY, speed, damage, hp
-    array_of_enemies.push_back(new Enemy (450,50,1, 1, 10, &eyes));
-    array_of_enemies.push_back(new Enemy (850,50,1, 1, 10, &eyes));
-
-    std::vector<Drawable*> array_of_powerup;
+    array_of_enemies.push_back(new Enemy (34,100,1, 10, 1, &array_of_bullet, &random_movement)); // posX, posY, speed, hp, damage
+    array_of_enemies.push_back(new Enemy (450,50,1, 10, 1, &array_of_bullet, &random_movement));
+    array_of_enemies.push_back(new Enemy (850,50,1, 10, 1, &array_of_bullet, &random_movement));
+    std::vector<Powerup*> array_of_powerup;
     array_of_powerup.push_back(new Powerup (350,50, true, false));
     array_of_powerup.push_back(new Powerup (450,550,false, true));
 
-    Mappa mappa(&array_of_enemies, &array_of_bullet, mapArray, &player, &array_of_coin, &array_of_powerup); //crea oggetto mappa
+    Mappa mappa(&array_of_enemies, &array_of_bullet,&player, &array_of_coin, &array_of_powerup); //crea oggetto mappa
+    mappa.load("mappetta prova",width*heigth);
+    bool camminabile=mappa.isWalkable(12,12,1);
 
-    Observer observer(&array_of_enemies, &player); //oggetto observer
+
+    Update update(&array_of_enemies, &player, &mappa); //oggetto update
+
 
     // Create a graphical text to display
     sf::Font font;
@@ -67,15 +63,11 @@ int main()
     textLose.setPosition(350, 450);
     textLose.setScale(2.0f, 2.0f);
 
-
-
     //Create menu window
     sf::RenderWindow windowMenu(sf::VideoMode(1600,900),"Gioco");
     windowMenu.setVerticalSyncEnabled(true);
-
     int chooseMenu;
     Menu menu(windowMenu.getSize().x, windowMenu.getSize().y);
-
 
     //run the MainMenu loop
     while (windowMenu.isOpen()) {
@@ -115,7 +107,6 @@ int main()
             }
         }
 
-        // draw the map
         windowMenu.clear();
         menu.draw(windowMenu);
         windowMenu.display();
@@ -123,9 +114,11 @@ int main()
 
 
     //Finestra gioco
-    sf::RenderWindow window(sf::VideoMode(1280, 704), "Mappa"); //crea la finestra con il gioco
+    sf::RenderWindow window(sf::VideoMode(1280, 704), "Game"); //crea la finestra con il gioco
+
 
     if(chooseMenu==1) {
+        sf::Clock gameclock;
         while (window.isOpen()) {
             sf::Event event;
 
@@ -138,43 +131,60 @@ int main()
                             case sf::Keyboard::Space:
                                 player.shoot();
                                 break;
-                            case sf::Keyboard::Up:
-                                player.move(0, -1);
-                                break;
+                            case sf::Keyboard::Up: //0 down,1 left, 2 right, 3 up
+                                player.setDirection(3);
+                                if(mappa.isWalkable(player.x,player.y-player.speed,player.direction)) {
+                                    player.move(3);
+                                }
+                                    break;
                             case sf::Keyboard::Down:
-                                player.move(0, +1);
+                                player.setDirection(0);
+                                if(mappa.isWalkable(player.x,player.y+player.speed,player.direction)) {
+                                    player.move(0);
+                                }
                                 break;
                             case sf::Keyboard::Left:
-                                player.move(-1, 0);
+                                player.setDirection(1);
+                                if(mappa.isWalkable(player.x-player.speed,player.y,player.direction)) {
+                                    player.move(1);
+                                }
                                 break;
                             case sf::Keyboard::Right:
-                                player.move(1, 0);
+                                player.setDirection(2);
+                                if(mappa.isWalkable(player.x+player.speed,player.y,player.direction)) {
+                                    player.move(2);
+                                }
                                 break;
                             case sf::Keyboard::Escape:
                                 window.close();
                                 break;
                         }
 
-                        //std::cout<<(*array_of_bullet.at(0)).getPositionX()<<std::endl;
-
                         sf::View playerview;
-                        //sf::View mapview;
-                        //sf::View minimapview;
                         playerview.setCenter(sf::Vector2f(player.getPositionX() + 32, player.getPositionY() + 32));
                         playerview.setSize(sf::Vector2f(1150, 640));
-                        //mapview.setViewport(sf::FloatRect(0, 0, 1 , 1));
-                        //minimapview.setViewport(sf::FloatRect(0.75, 0, 0.25, 0.25));
                         window.setView(playerview);
-                        //window.setView(minimapview);
-                        //window.setView(mapview);
-
                         break;
-
                 }
             }
 
+
+            /*int j=0;
+            if(j<1) {
+                std::vector<Enemy *>::const_iterator iterenemy;
+                int k = 0;
+                if (array_of_enemies.empty()) {}
+                else {
+                    for (iterenemy = array_of_enemies.begin(); iterenemy != array_of_enemies.end(); iterenemy++) {
+                        (*array_of_enemies.at(k)).shoot();
+                    }
+                    k++;
+                }
+                j++;
+            }*/
+
             //Cancellazione proiettili
-            std::vector<Drawable *>::const_iterator iter;
+            std::vector<Projectile*>::const_iterator iter;
             int i = 0;
             if (array_of_bullet.empty()) {}
             else {
@@ -182,7 +192,7 @@ int main()
 
                     (*array_of_bullet.at(i)).move();
 
-                    if (!(eyes.isWalkable((*array_of_bullet.at(i)).getPositionX(),
+                    if (!(mappa.isWalkable((*array_of_bullet.at(i)).getPositionX(),
                                           (*array_of_bullet.at(i)).getPositionY(), player.getDirection()))) {
                         array_of_bullet.erase(array_of_bullet.begin());
                         break;
@@ -190,12 +200,59 @@ int main()
                     i++;
                 }
             }
-            //Funzioni Update
-            observer.MoveEnemy();
-            int playerlife= observer.CollisionPlayer();
-            int numEnemies = observer.CollisionProjectile(&array_of_bullet, &array_of_coin);
-            observer.CollisionPickup(&array_of_coin, &array_of_powerup);
 
+
+
+            //std::cout<<gameclock.getElapsedTime().asSeconds()<<std::endl;
+            //Funzioni Update
+            std::vector<Enemy *>::const_iterator iterenemy;
+            int k = 0;
+            if (array_of_enemies.empty()) {}
+            else
+                {
+                    for (iterenemy = array_of_enemies.begin(); iterenemy != array_of_enemies.end(); iterenemy++)
+                    {
+                        if(array_of_enemies.at(k)->getDirection()==0)
+                        {
+                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()+array_of_enemies.at(k)->getSpeed(),0))
+                            {
+                                array_of_enemies.at(k)->move();
+                            }
+                            else{array_of_enemies.at(k)->setDirection()}
+                        }
+                        if(array_of_enemies.at(k)->getDirection()==1)
+                        {
+                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()-array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0))
+                            {
+                                array_of_enemies.at(k)->move();
+                            }
+                        }
+                        if(array_of_enemies.at(k)->getDirection()==2)
+                        {
+                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()+array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0))
+                            {
+                                array_of_enemies.at(k)->move();
+                            }
+                        }
+                        if(array_of_enemies.at(k)->getDirection()==3)
+                        {
+                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()-array_of_enemies.at(k)->getSpeed(),0))
+                            {
+                                array_of_enemies.at(k)->move();
+                            }
+                        }
+                        k++;
+                    }
+                }
+
+
+
+
+            int playerlife= update.CollisionPlayer();
+            int numEnemies = update.CollisionProjectile(&array_of_bullet, &array_of_coin);
+            update.CollisionPickup(&array_of_coin, &array_of_powerup);
+
+            //std::cout<<array_of_enemies.at(0)->getAlive()<<std::endl;
             window.clear();
             window.draw(mappa);
             if(numEnemies == 0){
@@ -215,7 +272,6 @@ int main()
             }
             window.display();
         }
-
         return 0;
     }
 }

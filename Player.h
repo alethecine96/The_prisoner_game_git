@@ -9,53 +9,51 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <array>
-#include "Eyes.h"
 #include "Projectile.h"
-#include "Drawable.h"
+#include "Entity.h"
 #include <vector>
+#include "GameCharacter.h"
+#include "Strategy.h"
 
-class Player : public Drawable{
+class Player : virtual public GameCharacter{
 
 public:
-    int x,y;
-    int speed;
-    int hp;
+    Player(int x,int y, int speed, int hp, std::vector<Projectile*> *Projectile_vector, Strategy *strategy) : GameCharacter(x, y, speed, hp){
+        direction=0;
+        step=0;//FIXME enum
+        this->Projectile_vector=Projectile_vector;
+        this->strategy=strategy;
+    };
+    //attributi
     int direction;
     int step;
     int damage=5;
     int wallet=95;
-    Eyes *eyes;
-    std::vector<Drawable*> *array1;
+    bool movement=true;
+    std::vector<Projectile*> *Projectile_vector;
+    Strategy *strategy;
 
-    Player(int x,int y, int speed, int hp, Eyes *eyes,std::vector<Drawable*> *array1){
-        this->x=x;
-        this->y=y;
-        this->speed=speed;
-        this->hp=hp;
-        direction=0;
-        step=0;//FIXME enum
-        this->eyes = eyes;
-        this->array1=array1;
 
-    };
+    virtual int  getPositionX() override;
+    virtual int  getPositionY() override;
 
-    virtual int  getPositionX();
-    virtual int  getPositionY();
-    virtual int  getDirection();
+    void move(int a, int b);
+    void move(int direction);
 
-    virtual void move(int a, int b);
+    void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
-    virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    void shoot();
 
-    virtual void shoot();
+    int setDamage(int damage);
+    int getDamage();
 
-    virtual int getHp();
+    int getDirection();
+    void setDirection(int direction);
 
-    virtual int setHp(int hp);
-
-    virtual int getDamage();
-
-    virtual int setDamage(int damage);
+    void SetStrategy(Strategy *strategymove)
+    {
+        strategy=strategymove;
+    }
 
 private:
 };

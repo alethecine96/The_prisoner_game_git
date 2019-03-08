@@ -9,9 +9,9 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
-#include "Drawable.h"
+#include "Entity.h"
 
-class Coin : public Drawable {
+class Coin : public Entity {
 
 public:
 

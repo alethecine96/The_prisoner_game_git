@@ -6,21 +6,22 @@
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/System/Time.hpp>
 #include <SFML/System/Clock.hpp>
+#include <cmath>
+#include "SFML/Graphics.hpp"
 #include "Mappa.h"
-
 
 
 void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
 
-
+    int width=40;
+    int height=36;
     sf::Clock clock;
     sf::Time elapsedtime = clock.getElapsedTime();
     sf::Texture m_tileset;
     sf::VertexArray m_vertices;
-    int width=40;
-    int height=36;
     sf::Vector2u tileSize = sf::Vector2u(32, 32);
+
 
     if (!m_tileset.loadFromFile("tilesetmod2.png"))
         return;
@@ -34,7 +35,7 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
         for (unsigned int j = 0; j < height; ++j)
         {
             // get the current tile number
-            int tileNumber = my_array[i + j * width];
+            int tileNumber = map[i + j * width];
 
             // find its position in the tileset texture
             int tu = tileNumber % (m_tileset.getSize().x / tileSize.x);
@@ -59,13 +60,13 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
         target.draw(m_vertices,&m_tileset); //draw map
         target.draw(*player);
-        std::vector<Drawable*>::const_iterator iter;
+        std::vector<Enemy*>::const_iterator iter;
         int i=0;
-        if(array->empty()){}
+        if(Enemy_vector->empty()){}
         else {
-            for (iter = array->begin(); iter != array->end(); iter++) {
-                target.draw(*array->at(i)); //draw the enemies
-                if(i+1<array->size()) {
+            for (iter = Enemy_vector->begin(); iter != Enemy_vector->end(); iter++) {
+                target.draw(*Enemy_vector->at(i)); //draw the enemies
+                if(i+1<Enemy_vector->size()) {
                     i++;
                 }
                 else{
@@ -76,43 +77,96 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
         }
 
 
-        std::vector<Drawable*>::const_iterator iter1;
+        std::vector<Projectile*>::const_iterator iter1;
         int j=0;
-        if(array1->empty()){}
+        if(Projectile_vector->empty()){}
         else {
 
-        for (iter1=array1->begin(); iter1!=array1->end(); iter1++) {
+        for (iter1=Projectile_vector->begin(); iter1!=Projectile_vector->end(); iter1++) {
 
-            target.draw(*array1->at(j));
+            target.draw(*Projectile_vector->at(j));
             j++;
             }
         }
 
-        std::vector<Drawable*>::const_iterator iter2;
+        std::vector<Coin*>::const_iterator iter2;
         int k=0;
-        if(array2->empty()){}
+        if(Coin_vector->empty()){}
         else {
 
-            for (iter2=array2->begin(); iter2!=array2->end(); iter2++) {
+            for (iter2=Coin_vector->begin(); iter2!=Coin_vector->end(); iter2++) {
 
-                target.draw(*array2->at(k));
+                target.draw(*Coin_vector->at(k));
                 k++;
             }
         }
 
-        std::vector<Drawable*>::const_iterator iter3;
+        std::vector<Powerup*>::const_iterator iter3;
         int l=0;
-        if(array3->empty()){}
+        if(Powerup_vector->empty()){}
         else {
 
-            for (iter3=array3->begin(); iter3!=array3->end(); iter3++) {
+            for (iter3=Powerup_vector->begin(); iter3!=Powerup_vector->end(); iter3++) {
 
-                target.draw(*array3->at(l));
+                target.draw(*Powerup_vector->at(l));
                 l++;
             }
         }
 
 
+}
 
+
+void Mappa::load(std::string fileName,int size) {
+    map = new int[size];
+    int value;
+    int i = 0;
+    std::fstream string(fileName, std::ios::in);
+
+    while (string >> value) {
+        map[i] = value;
+        i++;
+
+    }
+}
+
+
+bool Mappa::isWalkable(int x, int y, int direction) {
+
+
+    int width=40;
+    int walkableTiles[] = {0, 58, 97};  //Tile Calpestabili
+    int s = 3;
+
+    int oldX=x;
+    int oldY=y;
+    for (int j = 0; j < 4; j++) {           //COLLISION!!
+
+        x=oldX;
+        y=oldY;
+
+        x += pow(j, 2) * (-14) + 42 * j+2;
+        if (j == 0 || j == 1)
+            y += 2;
+        if (j==2 || j==3)
+            y += 30;
+        int a = (x / 32);
+        int b = (y / 32);
+        bool walkable = false;
+        for (int i = 0; i < s; i++) {
+            //     std::cout << "in -  " << x << "-----" << y << "----" << mapArray[(b * 40) + a] << " --------  " << a << " || " << b << std::endl;
+
+            if (map[(b * width) + a] == walkableTiles[i])
+                walkable = true;
+
+        }
+
+        if (!walkable) {
+            return false;
+        }
+    }
+
+    return true;
 
 }
+

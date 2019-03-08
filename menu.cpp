@@ -11,12 +11,11 @@ Menu::Menu(float width, float height)
     {
         std::cout << "Font Error" << std::endl;
     }
-    if (!background.loadFromFile("back.jpg")){
+    if (!background.loadFromFile("background1.jpg")){
         std::cout << "Texture Error" << std::endl;
     }
     backgroundS.setTexture(background);
     backgroundS.setPosition(0,0);
-    backgroundS.setScale(0.68,0.66);
 
     menu[0].setFont(font);
     menu[0].setColor(sf::Color::Green);

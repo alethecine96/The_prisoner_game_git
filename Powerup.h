@@ -9,9 +9,9 @@
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
-#include "Drawable.h"
+#include "Entity.h"
 
-class Powerup : public Drawable{
+class Powerup : public Entity{
 public:
 
     Powerup(int x, int y, bool isHeal, bool isGun){
