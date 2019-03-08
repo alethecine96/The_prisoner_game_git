@@ -219,21 +219,21 @@ int main()
                                 array_of_enemies.at(k)->move();
                             }
                         }
-                        if(array_of_enemies.at(k)->getDirection()==1)
+                        else if(array_of_enemies.at(k)->getDirection()==1)
                         {
                             if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()-array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0))
                             {
                                 array_of_enemies.at(k)->move();
                             }
                         }
-                        if(array_of_enemies.at(k)->getDirection()==2)
+                        else if(array_of_enemies.at(k)->getDirection()==2)
                         {
                             if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()+array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0))
                             {
                                 array_of_enemies.at(k)->move();
                             }
                         }
-                        if(array_of_enemies.at(k)->getDirection()==3)
+                        else if(array_of_enemies.at(k)->getDirection()==3)
                         {
                             if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()-array_of_enemies.at(k)->getSpeed(),0))
                             {
