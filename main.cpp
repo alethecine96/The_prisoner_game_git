@@ -214,31 +214,23 @@ int main()
                     {
                         if(array_of_enemies.at(k)->getDirection()==0)
                         {
-                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()+array_of_enemies.at(k)->getSpeed(),0))
-                            {
-                                array_of_enemies.at(k)->move();
-                            }
+                            array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()+array_of_enemies.at(k)->getSpeed(),0));
+                            array_of_enemies.at(k)->move();
                         }
                         else if(array_of_enemies.at(k)->getDirection()==1)
                         {
-                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()-array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0))
-                            {
-                                array_of_enemies.at(k)->move();
-                            }
+                            array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()-array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0));
+                            array_of_enemies.at(k)->move();
                         }
                         else if(array_of_enemies.at(k)->getDirection()==2)
                         {
-                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()+array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0))
-                            {
-                                array_of_enemies.at(k)->move();
-                            }
+                            array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()+array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0));
+                            array_of_enemies.at(k)->move();
                         }
                         else if(array_of_enemies.at(k)->getDirection()==3)
                         {
-                            if(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()-array_of_enemies.at(k)->getSpeed(),0))
-                            {
-                                array_of_enemies.at(k)->move();
-                            }
+                            array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(), array_of_enemies.at(k)->getPositionY() - array_of_enemies.at(k)->getSpeed(), 0));
+                            array_of_enemies.at(k)->move();
                         }
                         k++;
                     }
