@@ -11,7 +11,8 @@
 #include "Mappa.h"
 
 
-void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
+void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const
+{
 
 
     int width=40;
@@ -62,14 +63,17 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
         target.draw(*player);
         std::vector<Enemy*>::const_iterator iter;
         int i=0;
-        if(Enemy_vector->empty()){}
-        else {
-            for (iter = Enemy_vector->begin(); iter != Enemy_vector->end(); iter++) {
+        if(!Enemy_vector->empty())
+        {
+            for (iter = Enemy_vector->begin(); iter != Enemy_vector->end(); iter++)
+            {
                 target.draw(*Enemy_vector->at(i)); //draw the enemies
-                if(i+1<Enemy_vector->size()) {
+                if(i+1<Enemy_vector->size())
+                {
                     i++;
                 }
-                else{
+                else
+                {
                     i=0;
                 }
             }
@@ -79,23 +83,21 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
         std::vector<Projectile*>::const_iterator iter1;
         int j=0;
-        if(Projectile_vector->empty()){}
-        else {
-
-        for (iter1=Projectile_vector->begin(); iter1!=Projectile_vector->end(); iter1++) {
-
-            target.draw(*Projectile_vector->at(j));
-            j++;
+        if(!Projectile_vector->empty())
+        {
+            for (iter1=Projectile_vector->begin(); iter1!=Projectile_vector->end(); iter1++)
+            {
+                target.draw(*Projectile_vector->at(j));
+                j++;
             }
         }
 
         std::vector<Coin*>::const_iterator iter2;
         int k=0;
-        if(Coin_vector->empty()){}
-        else {
-
-            for (iter2=Coin_vector->begin(); iter2!=Coin_vector->end(); iter2++) {
-
+        if(!Coin_vector->empty())
+        {
+            for (iter2=Coin_vector->begin(); iter2!=Coin_vector->end(); iter2++)
+            {
                 target.draw(*Coin_vector->at(k));
                 k++;
             }
@@ -103,35 +105,32 @@ void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
         std::vector<Powerup*>::const_iterator iter3;
         int l=0;
-        if(Powerup_vector->empty()){}
-        else {
-
-            for (iter3=Powerup_vector->begin(); iter3!=Powerup_vector->end(); iter3++) {
-
+        if(!Powerup_vector->empty())
+        {
+            for (iter3=Powerup_vector->begin(); iter3!=Powerup_vector->end(); iter3++)
+            {
                 target.draw(*Powerup_vector->at(l));
                 l++;
             }
         }
-
-
 }
 
-
-void Mappa::load(std::string fileName,int size) {
+void Mappa::load(std::string fileName,int size)
+{
     map = new int[size];
     int value;
     int i = 0;
     std::fstream string(fileName, std::ios::in);
 
-    while (string >> value) {
+    while (string >> value)
+    {
         map[i] = value;
         i++;
-
     }
 }
 
-
-bool Mappa::isWalkable(int x, int y, int direction) {
+bool Mappa::isWalkable(int x, int y, int direction)
+{
 
 
     int width=40;
@@ -140,7 +139,8 @@ bool Mappa::isWalkable(int x, int y, int direction) {
 
     int oldX=x;
     int oldY=y;
-    for (int j = 0; j < 4; j++) {           //COLLISION!!
+    for (int j = 0; j < 4; j++)
+    {           //COLLISION!!
 
         x=oldX;
         y=oldY;
@@ -153,20 +153,16 @@ bool Mappa::isWalkable(int x, int y, int direction) {
         int a = (x / 32);
         int b = (y / 32);
         bool walkable = false;
-        for (int i = 0; i < s; i++) {
-            //     std::cout << "in -  " << x << "-----" << y << "----" << mapArray[(b * 40) + a] << " --------  " << a << " || " << b << std::endl;
-
+        for (int i = 0; i < s; i++)
+        {
             if (map[(b * width) + a] == walkableTiles[i])
                 walkable = true;
-
         }
 
-        if (!walkable) {
+        if (!walkable)
+        {
             return false;
         }
     }
-
     return true;
-
 }
-

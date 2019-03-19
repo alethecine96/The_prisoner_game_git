@@ -5,7 +5,8 @@
 #include "Coin.h"
 
 
-void Coin::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+void Coin::draw(sf::RenderTarget &target, sf::RenderStates states) const
+{
 
     sf::Texture ammo_tileset;
     sf::VertexArray vertices(sf::Quads, 4);
@@ -28,18 +29,12 @@ void Coin::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
 }
 
-bool Coin::setDestroy(bool destroy) {
+bool Coin::setDestroy(bool destroy)
+{
     Coin::destroy=destroy;
 }
 
-bool Coin::getDestroy() {
+bool Coin::getDestroy()
+{
     return destroy;
-}
-
-int Coin::getPositionX(){
-    return x;
-}
-
-int Coin::getPositionY(){
-    return y;
 }

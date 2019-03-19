@@ -9,7 +9,8 @@
 #include <cmath>
 #include <iostream>
 
-void Projectile::draw(sf::RenderTarget &target, sf::RenderStates states) const {
+void Projectile::draw(sf::RenderTarget &target, sf::RenderStates states) const
+{
 
     sf::Texture ammo_tileset;
     sf::VertexArray vertices(sf::Quads, 4);
@@ -24,25 +25,29 @@ void Projectile::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
     // define its 4 texture coordinates
 
-    if(direction==0){//down
+    if(direction==0)
+    {//down
         vertices[0].texCoords = sf::Vector2f(0, 32);
         vertices[1].texCoords = sf::Vector2f(0, 0);
         vertices[2].texCoords = sf::Vector2f(32, 0);
         vertices[3].texCoords = sf::Vector2f(32, 32);
     }
-    if(direction==1) {//left
+    if(direction==1)
+    {//left
         vertices[0].texCoords = sf::Vector2f(32, 32);
         vertices[1].texCoords = sf::Vector2f(0, 32);
         vertices[2].texCoords = sf::Vector2f(0, 0);
         vertices[3].texCoords = sf::Vector2f(32, 0);
     }
-    if(direction==2) {//right
+    if(direction==2)
+    {//right
         vertices[0].texCoords = sf::Vector2f(0, 0);
         vertices[1].texCoords = sf::Vector2f(32, 0);
         vertices[2].texCoords = sf::Vector2f(32, 32);
         vertices[3].texCoords = sf::Vector2f(0, 32);
     }
-    if(direction==3){//up
+    if(direction==3)
+    {//up
         vertices[0].texCoords = sf::Vector2f(32, 0);
         vertices[1].texCoords = sf::Vector2f(32, 32);
         vertices[2].texCoords = sf::Vector2f(0, 32);
@@ -52,8 +57,8 @@ void Projectile::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
 }
 
-void Projectile::move() {
-
+void Projectile::move()
+{
     float l=4.5;
     int a= -pow(direction,3)+ l*pow(direction,2)-l*direction;
     int b= round(-0.6*direction+0.9);
@@ -66,19 +71,22 @@ void Projectile::move() {
 
 }
 
-int Projectile::getPositionX(){
-    return x;
-}
-
-int Projectile::getPositionY(){
-    return y;
-}
-
-bool Projectile::setDestroy(bool destroy) {
+bool Projectile::setDestroy(bool destroy)
+{
     Projectile::destroy=destroy;
 }
 
-bool Projectile::getDestroy() {
+bool Projectile::getDestroy()
+{
     return destroy;
 }
 
+int Projectile::getDirection()
+{
+    return direction;
+}
+
+void Projectile::setDirection(int direction)
+{
+    Projectile::direction=direction;
+}

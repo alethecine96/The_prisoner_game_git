@@ -13,9 +13,11 @@
 #include "Coin.h"
 #include "Mappa.h"
 
-class Update {
+class Update
+{
 public:
-    Update(std::vector<Enemy*> *Enemy_vector, Player *player, Mappa *mappa){
+    Update(std::vector<Enemy*> *Enemy_vector, Player *player, Mappa *mappa)
+    {
         this->Enemy_vector=Enemy_vector;
         this->player=player;
         this->mappa=mappa;
@@ -28,9 +30,7 @@ public:
 
     void CollisionPickup(std::vector<Coin*> *Coin_vector, std::vector<Powerup*> *Powerup_vector);
 
-    void MoveEnemy();
-
-    int is_in_sight();
+    int is_in_sight(int j);
 
 private:
     std::vector<Enemy*> *Enemy_vector;

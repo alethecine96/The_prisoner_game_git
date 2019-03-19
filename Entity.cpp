@@ -5,50 +5,51 @@
 #include "Entity.h"
 
 
-void Entity::move() {
+int Entity::getPositionX()
+{
+    return x;
+}
+
+int Entity::getPositionY()
+{
+    return y;
+}
+
+int Entity::getDirection()
+{
+
+}
+void Entity::setDirection(int direction)
+{
 
 }
 
-int Entity::getPositionX() {
+bool Entity::setDestroy(bool destroy)
+{
 
 }
 
-int Entity::getPositionY() {
+bool Entity::getDestroy()
+{
 
 }
 
-
-int Entity::getDirection(){
-
-}
-
-
-bool Entity::setDestroy(bool destroy){
+int Entity::getPrice()
+{
 
 }
 
-bool Entity::getDestroy(){
+bool Entity::getHeal()
+{
 
 }
 
-
-int Entity::getPrice() {
-
-}
-
-bool Entity::getHeal(){
+bool Entity::getGun()
+{
 
 }
 
-bool Entity::getGun(){
+void Entity::move()
+{
 
 }
-
-int Entity::setPositionX(int x){
-
-}
-
-int Entity::setPositionY(int y){
-
-}
-

@@ -4,8 +4,8 @@
 
 #include "Powerup.h"
 
-void Powerup::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-
+void Powerup::draw(sf::RenderTarget &target, sf::RenderStates states) const
+{
     sf::Texture ammo_tileset;
     sf::VertexArray vertices(sf::Quads, 4);
 
@@ -17,14 +17,16 @@ void Powerup::draw(sf::RenderTarget &target, sf::RenderStates states) const {
     vertices[2].position = sf::Vector2f(x+32, y+32);
     vertices[3].position = sf::Vector2f(x, y+32);
 
-    if(isGun==true){
+    if(isGun==true)
+    {
         // define its 4 texture coordinates
         vertices[0].texCoords = sf::Vector2f(0, 0);
         vertices[1].texCoords = sf::Vector2f(32, 0);
         vertices[2].texCoords = sf::Vector2f(32, 32);
         vertices[3].texCoords = sf::Vector2f(0, 32);
     }
-    else{
+    else
+    {
         // define its 4 texture coordinates
         vertices[0].texCoords = sf::Vector2f(0, 32);
         vertices[1].texCoords = sf::Vector2f(32, 32);
@@ -36,30 +38,37 @@ void Powerup::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
 }
 
-bool Powerup::setDestroy(bool destroy) {
+bool Powerup::setDestroy(bool destroy)
+{
     Powerup::destroy=destroy;
 }
 
-bool Powerup::getDestroy() {
+bool Powerup::getDestroy()
+{
     return destroy;
 }
 
-bool Powerup::getHeal() {
+bool Powerup::getHeal()
+{
     return isHeal;
 }
 
-bool Powerup::getGun() {
+bool Powerup::getGun()
+{
     return isGun;
 }
 
-int Powerup::getPrice() {
+int Powerup::getPrice()
+{
     return price;
 }
 
-int Powerup::getPositionX(){
+int Powerup::getPositionX()
+{
     return x;
 }
 
-int Powerup::getPositionY(){
+int Powerup::getPositionY()
+{
     return y;
 }

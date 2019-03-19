@@ -8,21 +8,29 @@
 
 #include "Entity.h"
 
-class GameCharacter : public Entity {
+class GameCharacter : public Entity
+{
 public:
-    GameCharacter(int x, int y, int speed, int hp){
-        this->x=x;
-        this->y=y;
+    GameCharacter(int x, int y, int speed, int hp, int damage, int direction):Entity(x,y)
+    {
         this->speed=speed;
         this->hp=hp;
+        this->damage=damage;
+        this->direction=direction;
     };
+
     int hp;
-    int x, y;
+    int damage;
     int speed;
     int direction;
+    bool canmove=true;
     virtual int setHp(int hp);
     virtual int getHp();
     virtual int getDirection();
+    virtual void setDirection(int direction);
+    virtual void setDamage(int damage);
+    virtual int  getDamage();
+    virtual int getSpeed();
 };
 
 

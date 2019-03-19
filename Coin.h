@@ -11,26 +11,24 @@
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Entity.h"
 
-class Coin : public Entity {
+class Coin : public Entity
+{
 
 public:
 
-    Coin(int x, int y){
-        this->x=x;
-        this->y=y;
+    Coin(int x, int y, int value):Entity(x,y)
+    {
+        this->value=value;
     };
-    int x;
-    int y;
     bool destroy= false;
 
 
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    int getvalue();
 
     bool setDestroy(bool destroy);
     bool getDestroy();
-
-    virtual int  getPositionX();
-    virtual int  getPositionY();
+    int value;
 };
 
 

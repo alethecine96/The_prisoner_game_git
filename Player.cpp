@@ -7,7 +7,8 @@
 #include <iostream>
 #include "Player.h"
 
-void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const{
+void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const
+{
     sf::Texture player_tileset;
     sf::VertexArray vertices(sf::Quads, 4);
 
@@ -29,50 +30,13 @@ void Player::draw(sf::RenderTarget &target, sf::RenderStates states) const{
 
 }
 
-void Player::move(int a, int b) {
-    direction = (-3*b+a+3*abs(b)+3*abs(a))/2;  // 0 down,1 left, 2 right, 3 up
-        this->x+=this->speed*a;
-        this->y+=this->speed*b;
-
-
-        step=(step+1)%3;  //FIXME make me slower
-
-}
-
-int Player::getPositionX(){
-    return x;
-}
-
-int Player::getPositionY(){
-    return y;
-}
-
-void Player::shoot(){
+void Player::shoot()
+{
     Projectile_vector->push_back(new Projectile(x,y,5,direction));
 }
 
-/*
-int Player::setHp(int hp) {
-    Player::hp=hp;
-}
-*/
-
-int Player::setDamage(int damage) {
-    Player::damage=damage;
-}
-
-int Player::getDamage() {
-    return damage;
-}
-
-int Player::getDirection() {
-    return direction;
-}
-
-void Player::move(int direction) {
-    strategy->strategy_move(direction,this);
-}
-
-void Player::setDirection(int direction) {
-    Player::direction=direction;
+void Player::move(int direction)
+{
+    strategy->strategy_move(direction,this,this);
+    step=(step+1)%3;
 }

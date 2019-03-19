@@ -7,21 +7,29 @@
 
 #include "GameCharacter.h"
 
-
-class Strategy {
+class Strategy
+{
 public:
-    virtual void strategy_move(int direction,GameCharacter *whomove)=0;
+    virtual void strategy_move(int direction,GameCharacter *whomove, GameCharacter *who_is_followed)=0;
 
 };
 
-class Keyboard_Movement: public Strategy{
+class Keyboard_Movement: public Strategy
+{
 public:
-    virtual void strategy_move(int direction, GameCharacter *whomove) override;
+    void strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed) override;
 };
 
-class Random_Movement: public Strategy{
+class Random_Movement: public Strategy
+{
 public:
-    virtual void strategy_move(int direction, GameCharacter *whomove) override;
+    void strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed) override;
+};
+
+class Follow_Movement: public Strategy
+{
+public:
+    void strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed) override;
 };
 
 #endif //PROJECT_STRATEGY_H

@@ -11,16 +11,15 @@
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Entity.h"
 
-class Powerup : public Entity{
+class Powerup : public Entity
+{
 public:
 
-    Powerup(int x, int y, bool isHeal, bool isGun){
-        this->x=x;
-        this->y=y;
+    Powerup(int x, int y, bool isHeal, bool isGun):Entity(x,y)
+    {
         this->isGun=isGun;
         this->isHeal=isHeal;
     }
-    int x, y;
     int price=50;
     bool destroy=false;
     bool isHeal;
