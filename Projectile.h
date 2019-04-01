@@ -13,9 +13,6 @@ class Projectile : public Entity
 {
 
 public:
-    int speed;
-    int direction;
-    bool destroy=false;
     Projectile(int x, int y, int speed, int direction):Entity(x,y)
     {
         this->speed=speed;
@@ -25,10 +22,15 @@ public:
     void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
     void move() override;
-    bool setDestroy(bool destroy) override;
-    bool getDestroy() override;
+    bool setDestroy(bool destroy);
+    bool getDestroy();
     int getDirection();
     void setDirection(int direction);
+
+protected:
+    int speed;
+    int direction;
+    bool destroy=false;
 };
 
 

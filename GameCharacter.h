@@ -19,11 +19,6 @@ public:
         this->direction=direction;
     };
 
-    int hp;
-    int damage;
-    int speed;
-    int direction;
-    bool canmove=true;
     virtual int setHp(int hp);
     virtual int getHp();
     virtual int getDirection();
@@ -31,6 +26,14 @@ public:
     virtual void setDamage(int damage);
     virtual int  getDamage();
     virtual int getSpeed();
+    bool canmove=true;
+
+protected:
+    int hp;
+    int damage;
+    int speed;
+    int direction;
+
 };
 
 

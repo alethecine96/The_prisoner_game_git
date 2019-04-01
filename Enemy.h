@@ -12,27 +12,23 @@
 #include "GameCharacter.h"
 #include "Strategy.h"
 #include "Player.h"
+#include "Powerup.h"
 
 class Enemy : public GameCharacter
 {
 public:
-    int damage;
-    bool aggro=false;
-    int step;
-    bool alive=true;
-    std::vector<Projectile*> *Projectile_vector;
-    Strategy *strategy;
-    Player *player;
 
 
 
-    Enemy(int x,int y, int speed,int hp, int damage, int direction, std::vector<Projectile*> *Projectile_vector, Strategy *strategy, Player *player) : GameCharacter(x, y, speed, hp, damage, direction)
+
+    Enemy(int x,int y, int speed,int hp, int damage, int direction, std::vector<Projectile*> *Projectile_vector, Strategy *strategy, Player *player, bool supervisor) : GameCharacter(x, y, speed, hp, damage, direction)
     {
         this->damage=damage;
         step=0;//FIXME enum
         this->Projectile_vector=Projectile_vector;
         this->strategy=strategy;
         this->player=player;
+        this->supervisor=supervisor;
     };
 
 
@@ -44,12 +40,22 @@ public:
     void shoot();
     void move();
 
-    void setcanmove(bool canmove);
+    void setCanmove(bool canmove);
+    bool getsupervisor();
 
-    void SetStrategy(Strategy *strategymove)
+    void setStrategy(Strategy *strategymove)
     {
         strategy=strategymove;
     }
+
+protected:
+    bool aggro=false;
+    int step;
+    bool alive=true;
+    std::vector<Projectile*> *Projectile_vector;
+    Strategy *strategy;
+    Player *player;
+    bool supervisor;
 };
 
 

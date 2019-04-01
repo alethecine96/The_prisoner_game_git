@@ -38,3 +38,7 @@ bool Coin::getDestroy()
 {
     return destroy;
 }
+
+int Coin::getValue(){
+    return value;
+}

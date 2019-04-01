@@ -24,14 +24,17 @@ void Achievement::notifyObservers()
 {
     for (Observer *observer : observers)
     { // notifica gli observer
-        observer->update(kill, textAch);
+        observer->update();
     }
 }
 
-void Achievement::setState(int kill, std::string textAch)
+void Achievement::setState(int kill)
 {
-    this->kill = kill;
-    this->textAch = textAch;
-    std::cout << std::endl;
+    _kill = kill;
     notifyObservers();
+}
+
+int Achievement::getKill()
+{
+    return _kill;
 }

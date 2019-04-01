@@ -16,18 +16,20 @@ class Coin : public Entity
 
 public:
 
-    Coin(int x, int y, int value):Entity(x,y)
+    Coin(int x, int y, int value) : Entity(x,y)
     {
         this->value=value;
     };
-    bool destroy= false;
-
 
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
-    int getvalue();
 
+    int getValue();
     bool setDestroy(bool destroy);
     bool getDestroy();
+
+
+protected:
+    bool destroy= false;
     int value;
 };
 

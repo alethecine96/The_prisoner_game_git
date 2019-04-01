@@ -32,4 +32,9 @@ public:
     void strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed) override;
 };
 
+class Patrol_Movement: public Strategy
+{
+    void strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed) override;
+};
+
 #endif //PROJECT_STRATEGY_H

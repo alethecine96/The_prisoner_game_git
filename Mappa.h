@@ -43,7 +43,6 @@ public:
     void load(std::string filename, int size);
     bool isWalkable(int x, int y,int direction);
 
-
 private:
     std::vector<Enemy*> *Enemy_vector;   //nemici
     std::vector<Projectile*> *Projectile_vector;  //proiettili

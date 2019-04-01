@@ -15,36 +15,21 @@ int Entity::getPositionY()
     return y;
 }
 
+int Entity::setPositionX(int x)
+{
+    Entity::x=x;
+}
+
+int Entity::setPositionY(int y)
+{
+    Entity::y=y;
+}
+
 int Entity::getDirection()
 {
 
 }
 void Entity::setDirection(int direction)
-{
-
-}
-
-bool Entity::setDestroy(bool destroy)
-{
-
-}
-
-bool Entity::getDestroy()
-{
-
-}
-
-int Entity::getPrice()
-{
-
-}
-
-bool Entity::getHeal()
-{
-
-}
-
-bool Entity::getGun()
 {
 
 }

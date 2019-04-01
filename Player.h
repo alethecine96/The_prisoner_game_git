@@ -24,11 +24,8 @@ public:
         this->Projectile_vector=Projectile_vector;
         this->strategy=strategy;
     };
-    //attributi
-    int step;
-    int wallet=95;
-    std::vector<Projectile*> *Projectile_vector;
-    Strategy *strategy;
+
+
 
     void move(int direction);
 
@@ -41,7 +38,13 @@ public:
         strategy=strategymove;
     }
 
+
+    int wallet=95;
+
 private:
+    std::vector<Projectile*> *Projectile_vector;
+    Strategy *strategy;
+    int step;
 };
 
 

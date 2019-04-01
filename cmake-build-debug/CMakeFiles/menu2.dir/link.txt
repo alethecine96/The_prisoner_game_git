@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmenu2.a  CMakeFiles/menu2.dir/menu.cpp.o CMakeFiles/menu2.dir/Mappa.cpp.o CMakeFiles/menu2.dir/Player.cpp.o CMakeFiles/menu2.dir/Projectile.cpp.o CMakeFiles/menu2.dir/Enemy.cpp.o CMakeFiles/menu2.dir/Entity.cpp.o CMakeFiles/menu2.dir/Updater.cpp.o CMakeFiles/menu2.dir/Coin.cpp.o CMakeFiles/menu2.dir/Powerup.cpp.o CMakeFiles/menu2.dir/GameCharacter.cpp.o CMakeFiles/menu2.dir/Strategy.cpp.o CMakeFiles/menu2.dir/Client.cpp.o CMakeFiles/menu2.dir/Achievement.cpp.o
+/usr/bin/ranlib libmenu2.a

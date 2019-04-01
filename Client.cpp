@@ -4,22 +4,19 @@
 
 #include "Client.h"
 
-void Client::update(int kill, std::string textAch )
+void Client::update()
 {
 // Stampa gli Achievement
-    const int a=2;
-    const int b=1;
-    std::cout<<kill<<std::endl;
-    if(kill==a || kill==b)
+    int kill=_achievement->getKill();
+    if(kill==1 || kill==2)
     {
         switch (kill)
         {
-            case (a):
+            case (1):
                 textAch = ("1 KILL!");
                 setTextAch(textAch);
-                std::cout<<"Una kill per te"<<std::endl;
                 break;
-            case (b):
+            case (2):
                 textAch = ("2 KILL");
                 setTextAch(textAch);
                 break;
@@ -36,10 +33,10 @@ void Client::update(int kill, std::string textAch )
     }
 }
 
-Client::Client(int id)
+/*Client::Client(int id)
 {
     this->id = id;
-}
+}*/
 
 const std::string &Client::getTextAch() const
 {

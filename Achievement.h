@@ -16,6 +16,7 @@ class Achievement : public Subject
 {
 public:
 
+    Achievement(): _kill(0){}
     std::vector<Observer *> observers; // observer
 
     void registerObserver(Observer *observer) override;
@@ -24,11 +25,12 @@ public:
 
     void notifyObservers() ;//override;
 
-    void setState(int kill, std::string );
+    void setState(int kill);
 
-private:
-    int kill = 3;
-    std::string textAch;
+    int getKill();
+
+protected:
+    int _kill;
 };
 
 

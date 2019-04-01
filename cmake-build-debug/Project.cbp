@@ -5,43 +5,119 @@
 		<Option title="Project"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;CMake Files\test\;CMake Files\test\lib\;CMake Files\test\lib\googletest\;CMake Files\test\lib\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+			<Target title="install/strip">
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="menu">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/menu" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 menu"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="menu/fast">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/menu" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 menu/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="The_Prisoner_Game">
-				<Option output="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/The_Prisoner_Game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+			<Target title="menu2">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/libmenu2.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/include/c++/7"/>
@@ -54,17 +130,17 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 The_Prisoner_Game"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 menu2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="The_Prisoner_Game/fast">
-				<Option output="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/The_Prisoner_Game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug"/>
+			<Target title="menu2/fast">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/libmenu2.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
 				<Option object_output="./"/>
-				<Option type="1"/>
+				<Option type="2"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/usr/include/c++/7"/>
@@ -77,78 +153,286 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 The_Prisoner_Game/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 menu2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="runTests">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/runTests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/include"/>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 runTests"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="runTests/fast">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/runTests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/include"/>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 runTests/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/include"/>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest_main/fast">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/libgtest_main.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/include"/>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest_main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/include"/>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gtest/fast">
+				<Option output="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/libgtest.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/include"/>
+					<Add directory="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 gtest/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/alessandro/Scaricati/Prova\ 4.1/menu/cmake-build-debug/test/lib/googletest/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Drawable.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Achievement.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Drawable.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Achievement.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Enemy.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Client.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Enemy.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Client.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Eyes.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Coin.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Eyes.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Coin.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Inventory.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Enemy.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/MapLoader.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Enemy.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/MapLoader.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Entity.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Mappa.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Entity.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Mappa.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Observer.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Observer.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Mappa.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Player.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Mappa.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Player.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Observer.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Projectile.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Player.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/Projectile.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Player.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/main.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Powerup.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/menu.cpp">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Powerup.h">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/menu.h">
-			<Option target="The_Prisoner_Game"/>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Projectile.cpp">
+			<Option target="menu2"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/CMakeLists.txt">
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Projectile.h">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Strategy.cpp">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Strategy.h">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Subject.h">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Updater.cpp">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Updater.h">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/main.cpp">
+			<Option target="menu"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/menu.cpp">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/menu.h">
+			<Option target="menu2"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/Tester.cpp">
+			<Option target="runTests"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/src/gtest-all.cc">
+			<Option target="gtest"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/src/gtest_main.cc">
+			<Option target="gtest_main"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/runAllTests.cpp">
+			<Option target="runTests"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/alessandro/CLionProjects/The_Prisoner_Game/cmake_modules/FindSFML.cmake">
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/cmake_modules/FindSFML.cmake">
 			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\lib\googletest\"/>
+		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/test/lib/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\test\lib\googletest\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

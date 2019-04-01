@@ -62,7 +62,12 @@ void Enemy::move()
     step=(step+1)%3;
 }
 
-void Enemy::setcanmove(bool canmove)
+void Enemy::setCanmove(bool canmove)
 {
     Enemy::canmove=canmove;
+}
+
+bool Enemy::getsupervisor()
+{
+    return supervisor;
 }

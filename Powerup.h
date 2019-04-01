@@ -14,16 +14,12 @@
 class Powerup : public Entity
 {
 public:
-
     Powerup(int x, int y, bool isHeal, bool isGun):Entity(x,y)
     {
         this->isGun=isGun;
         this->isHeal=isHeal;
     }
-    int price=50;
-    bool destroy=false;
-    bool isHeal;
-    bool isGun;
+
 
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
@@ -32,9 +28,14 @@ public:
     bool getHeal();
     bool getGun();
     int getPrice();
-
     virtual int  getPositionX();
     virtual int  getPositionY();
+
+protected:
+    int price=50;
+    bool destroy=false;
+    bool isHeal;
+    bool isGun;
 };
 
 

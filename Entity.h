@@ -13,8 +13,7 @@ class Entity : public sf::Drawable
 {
 public:
 
-    int x;
-    int y;
+
     Entity(int x,int y)
     {
         this->x=x;
@@ -23,14 +22,14 @@ public:
     virtual void move();
     virtual int getPositionX();
     virtual int getPositionY();
-    virtual bool setDestroy(bool destroy);
-    virtual bool getDestroy();
-    virtual int getPrice();
-    virtual bool getHeal();
-    virtual bool getGun();
+    virtual int setPositionX(int x);
+    virtual int setPositionY(int y);
     virtual int getDirection();
     virtual void setDirection(int direction);
 
+protected:
+    int x;
+    int y;
 };
 
 

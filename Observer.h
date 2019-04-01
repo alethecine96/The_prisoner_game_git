@@ -9,10 +9,12 @@
 
 #include <iostream>
 
-class Observer
+class Observer  //TODO Observer modalità pull da questo sito esempio: https://dzone.com/articles/observer-pattern
 {
 public:
-    virtual void update(int kill, std::string)=0;
+
+    virtual ~Observer() {};
+    virtual void update()=0;
 };
 
 

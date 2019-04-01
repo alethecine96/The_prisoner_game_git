@@ -27,6 +27,8 @@ public:
      */
     virtual void notifyObservers() = 0;
 
+protected:
+    virtual ~Subject() {};
 };
 
 #endif //PROJECT_SUBJECT_H

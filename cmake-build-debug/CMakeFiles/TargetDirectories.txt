@@ -1,3 +1,23 @@
-/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/The_Prisoner_Game.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/install/local.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/install.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/menu.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/menu2.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/install/strip.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/install/local.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/runTests.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/edit_cache.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/install.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/CMakeFiles/list_install_components.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/install/strip.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/install/local.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/install.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/list_install_components.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest_main.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/edit_cache.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/gtest.dir
+/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/test/lib/googletest/CMakeFiles/rebuild_cache.dir

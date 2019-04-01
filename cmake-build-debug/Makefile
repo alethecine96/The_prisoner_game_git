@@ -48,24 +48,59 @@ RM = /home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alessandro/CLionProjects/The_Prisoner_Game
+CMAKE_SOURCE_DIR = "/home/alessandro/Scaricati/Prova 4.1/menu"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,11 +113,22 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/alessandro/Scaricati/clion-2018.1.3/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles /home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles" "/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alessandro/CLionProjects/The_Prisoner_Game/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/alessandro/Scaricati/Prova 4.1/menu/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +157,150 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named The_Prisoner_Game
+# Target rules for targets named menu
 
 # Build rule for target.
-The_Prisoner_Game: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 The_Prisoner_Game
-.PHONY : The_Prisoner_Game
+menu: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menu
+.PHONY : menu
 
 # fast build rule for target.
-The_Prisoner_Game/fast:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/build
-.PHONY : The_Prisoner_Game/fast
+menu/fast:
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/build
+.PHONY : menu/fast
 
-Drawable.o: Drawable.cpp.o
+#=============================================================================
+# Target rules for targets named menu2
 
-.PHONY : Drawable.o
+# Build rule for target.
+menu2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 menu2
+.PHONY : menu2
+
+# fast build rule for target.
+menu2/fast:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/build
+.PHONY : menu2/fast
+
+#=============================================================================
+# Target rules for targets named runTests
+
+# Build rule for target.
+runTests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 runTests
+.PHONY : runTests
+
+# fast build rule for target.
+runTests/fast:
+	$(MAKE) -f test/CMakeFiles/runTests.dir/build.make test/CMakeFiles/runTests.dir/build
+.PHONY : runTests/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f test/lib/googletest/CMakeFiles/gtest_main.dir/build.make test/lib/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f test/lib/googletest/CMakeFiles/gtest.dir/build.make test/lib/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+Achievement.o: Achievement.cpp.o
+
+.PHONY : Achievement.o
 
 # target to build an object file
-Drawable.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Drawable.cpp.o
-.PHONY : Drawable.cpp.o
+Achievement.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Achievement.cpp.o
+.PHONY : Achievement.cpp.o
 
-Drawable.i: Drawable.cpp.i
+Achievement.i: Achievement.cpp.i
 
-.PHONY : Drawable.i
+.PHONY : Achievement.i
 
 # target to preprocess a source file
-Drawable.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Drawable.cpp.i
-.PHONY : Drawable.cpp.i
+Achievement.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Achievement.cpp.i
+.PHONY : Achievement.cpp.i
 
-Drawable.s: Drawable.cpp.s
+Achievement.s: Achievement.cpp.s
 
-.PHONY : Drawable.s
+.PHONY : Achievement.s
 
 # target to generate assembly for a file
-Drawable.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Drawable.cpp.s
-.PHONY : Drawable.cpp.s
+Achievement.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Achievement.cpp.s
+.PHONY : Achievement.cpp.s
+
+Client.o: Client.cpp.o
+
+.PHONY : Client.o
+
+# target to build an object file
+Client.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Client.cpp.o
+.PHONY : Client.cpp.o
+
+Client.i: Client.cpp.i
+
+.PHONY : Client.i
+
+# target to preprocess a source file
+Client.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Client.cpp.i
+.PHONY : Client.cpp.i
+
+Client.s: Client.cpp.s
+
+.PHONY : Client.s
+
+# target to generate assembly for a file
+Client.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Client.cpp.s
+.PHONY : Client.cpp.s
+
+Coin.o: Coin.cpp.o
+
+.PHONY : Coin.o
+
+# target to build an object file
+Coin.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Coin.cpp.o
+.PHONY : Coin.cpp.o
+
+Coin.i: Coin.cpp.i
+
+.PHONY : Coin.i
+
+# target to preprocess a source file
+Coin.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Coin.cpp.i
+.PHONY : Coin.cpp.i
+
+Coin.s: Coin.cpp.s
+
+.PHONY : Coin.s
+
+# target to generate assembly for a file
+Coin.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Coin.cpp.s
+.PHONY : Coin.cpp.s
 
 Enemy.o: Enemy.cpp.o
 
@@ -156,7 +308,7 @@ Enemy.o: Enemy.cpp.o
 
 # target to build an object file
 Enemy.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Enemy.cpp.o
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Enemy.cpp.o
 .PHONY : Enemy.cpp.o
 
 Enemy.i: Enemy.cpp.i
@@ -165,7 +317,7 @@ Enemy.i: Enemy.cpp.i
 
 # target to preprocess a source file
 Enemy.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Enemy.cpp.i
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Enemy.cpp.i
 .PHONY : Enemy.cpp.i
 
 Enemy.s: Enemy.cpp.s
@@ -174,89 +326,62 @@ Enemy.s: Enemy.cpp.s
 
 # target to generate assembly for a file
 Enemy.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Enemy.cpp.s
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Enemy.cpp.s
 .PHONY : Enemy.cpp.s
 
-Eyes.o: Eyes.cpp.o
+Entity.o: Entity.cpp.o
 
-.PHONY : Eyes.o
-
-# target to build an object file
-Eyes.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Eyes.cpp.o
-.PHONY : Eyes.cpp.o
-
-Eyes.i: Eyes.cpp.i
-
-.PHONY : Eyes.i
-
-# target to preprocess a source file
-Eyes.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Eyes.cpp.i
-.PHONY : Eyes.cpp.i
-
-Eyes.s: Eyes.cpp.s
-
-.PHONY : Eyes.s
-
-# target to generate assembly for a file
-Eyes.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Eyes.cpp.s
-.PHONY : Eyes.cpp.s
-
-Inventory.o: Inventory.cpp.o
-
-.PHONY : Inventory.o
+.PHONY : Entity.o
 
 # target to build an object file
-Inventory.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Inventory.cpp.o
-.PHONY : Inventory.cpp.o
+Entity.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Entity.cpp.o
+.PHONY : Entity.cpp.o
 
-Inventory.i: Inventory.cpp.i
+Entity.i: Entity.cpp.i
 
-.PHONY : Inventory.i
+.PHONY : Entity.i
 
 # target to preprocess a source file
-Inventory.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Inventory.cpp.i
-.PHONY : Inventory.cpp.i
+Entity.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Entity.cpp.i
+.PHONY : Entity.cpp.i
 
-Inventory.s: Inventory.cpp.s
+Entity.s: Entity.cpp.s
 
-.PHONY : Inventory.s
+.PHONY : Entity.s
 
 # target to generate assembly for a file
-Inventory.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Inventory.cpp.s
-.PHONY : Inventory.cpp.s
+Entity.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Entity.cpp.s
+.PHONY : Entity.cpp.s
 
-MapLoader.o: MapLoader.cpp.o
+GameCharacter.o: GameCharacter.cpp.o
 
-.PHONY : MapLoader.o
+.PHONY : GameCharacter.o
 
 # target to build an object file
-MapLoader.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/MapLoader.cpp.o
-.PHONY : MapLoader.cpp.o
+GameCharacter.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/GameCharacter.cpp.o
+.PHONY : GameCharacter.cpp.o
 
-MapLoader.i: MapLoader.cpp.i
+GameCharacter.i: GameCharacter.cpp.i
 
-.PHONY : MapLoader.i
+.PHONY : GameCharacter.i
 
 # target to preprocess a source file
-MapLoader.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/MapLoader.cpp.i
-.PHONY : MapLoader.cpp.i
+GameCharacter.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/GameCharacter.cpp.i
+.PHONY : GameCharacter.cpp.i
 
-MapLoader.s: MapLoader.cpp.s
+GameCharacter.s: GameCharacter.cpp.s
 
-.PHONY : MapLoader.s
+.PHONY : GameCharacter.s
 
 # target to generate assembly for a file
-MapLoader.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/MapLoader.cpp.s
-.PHONY : MapLoader.cpp.s
+GameCharacter.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/GameCharacter.cpp.s
+.PHONY : GameCharacter.cpp.s
 
 Mappa.o: Mappa.cpp.o
 
@@ -264,7 +389,7 @@ Mappa.o: Mappa.cpp.o
 
 # target to build an object file
 Mappa.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Mappa.cpp.o
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Mappa.cpp.o
 .PHONY : Mappa.cpp.o
 
 Mappa.i: Mappa.cpp.i
@@ -273,7 +398,7 @@ Mappa.i: Mappa.cpp.i
 
 # target to preprocess a source file
 Mappa.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Mappa.cpp.i
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Mappa.cpp.i
 .PHONY : Mappa.cpp.i
 
 Mappa.s: Mappa.cpp.s
@@ -282,35 +407,8 @@ Mappa.s: Mappa.cpp.s
 
 # target to generate assembly for a file
 Mappa.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Mappa.cpp.s
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Mappa.cpp.s
 .PHONY : Mappa.cpp.s
-
-Observer.o: Observer.cpp.o
-
-.PHONY : Observer.o
-
-# target to build an object file
-Observer.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Observer.cpp.o
-.PHONY : Observer.cpp.o
-
-Observer.i: Observer.cpp.i
-
-.PHONY : Observer.i
-
-# target to preprocess a source file
-Observer.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Observer.cpp.i
-.PHONY : Observer.cpp.i
-
-Observer.s: Observer.cpp.s
-
-.PHONY : Observer.s
-
-# target to generate assembly for a file
-Observer.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Observer.cpp.s
-.PHONY : Observer.cpp.s
 
 Player.o: Player.cpp.o
 
@@ -318,7 +416,7 @@ Player.o: Player.cpp.o
 
 # target to build an object file
 Player.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Player.cpp.o
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Player.cpp.o
 .PHONY : Player.cpp.o
 
 Player.i: Player.cpp.i
@@ -327,7 +425,7 @@ Player.i: Player.cpp.i
 
 # target to preprocess a source file
 Player.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Player.cpp.i
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Player.cpp.i
 .PHONY : Player.cpp.i
 
 Player.s: Player.cpp.s
@@ -336,8 +434,35 @@ Player.s: Player.cpp.s
 
 # target to generate assembly for a file
 Player.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Player.cpp.s
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Player.cpp.s
 .PHONY : Player.cpp.s
+
+Powerup.o: Powerup.cpp.o
+
+.PHONY : Powerup.o
+
+# target to build an object file
+Powerup.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Powerup.cpp.o
+.PHONY : Powerup.cpp.o
+
+Powerup.i: Powerup.cpp.i
+
+.PHONY : Powerup.i
+
+# target to preprocess a source file
+Powerup.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Powerup.cpp.i
+.PHONY : Powerup.cpp.i
+
+Powerup.s: Powerup.cpp.s
+
+.PHONY : Powerup.s
+
+# target to generate assembly for a file
+Powerup.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Powerup.cpp.s
+.PHONY : Powerup.cpp.s
 
 Projectile.o: Projectile.cpp.o
 
@@ -345,7 +470,7 @@ Projectile.o: Projectile.cpp.o
 
 # target to build an object file
 Projectile.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Projectile.cpp.o
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Projectile.cpp.o
 .PHONY : Projectile.cpp.o
 
 Projectile.i: Projectile.cpp.i
@@ -354,7 +479,7 @@ Projectile.i: Projectile.cpp.i
 
 # target to preprocess a source file
 Projectile.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Projectile.cpp.i
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Projectile.cpp.i
 .PHONY : Projectile.cpp.i
 
 Projectile.s: Projectile.cpp.s
@@ -363,8 +488,62 @@ Projectile.s: Projectile.cpp.s
 
 # target to generate assembly for a file
 Projectile.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/Projectile.cpp.s
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Projectile.cpp.s
 .PHONY : Projectile.cpp.s
+
+Strategy.o: Strategy.cpp.o
+
+.PHONY : Strategy.o
+
+# target to build an object file
+Strategy.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Strategy.cpp.o
+.PHONY : Strategy.cpp.o
+
+Strategy.i: Strategy.cpp.i
+
+.PHONY : Strategy.i
+
+# target to preprocess a source file
+Strategy.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Strategy.cpp.i
+.PHONY : Strategy.cpp.i
+
+Strategy.s: Strategy.cpp.s
+
+.PHONY : Strategy.s
+
+# target to generate assembly for a file
+Strategy.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Strategy.cpp.s
+.PHONY : Strategy.cpp.s
+
+Updater.o: Updater.cpp.o
+
+.PHONY : Updater.o
+
+# target to build an object file
+Updater.cpp.o:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Updater.cpp.o
+.PHONY : Updater.cpp.o
+
+Updater.i: Updater.cpp.i
+
+.PHONY : Updater.i
+
+# target to preprocess a source file
+Updater.cpp.i:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Updater.cpp.i
+.PHONY : Updater.cpp.i
+
+Updater.s: Updater.cpp.s
+
+.PHONY : Updater.s
+
+# target to generate assembly for a file
+Updater.cpp.s:
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/Updater.cpp.s
+.PHONY : Updater.cpp.s
 
 main.o: main.cpp.o
 
@@ -372,7 +551,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -381,7 +560,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -390,7 +569,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/menu.dir/build.make CMakeFiles/menu.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 menu.o: menu.cpp.o
@@ -399,7 +578,7 @@ menu.o: menu.cpp.o
 
 # target to build an object file
 menu.cpp.o:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/menu.cpp.o
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/menu.cpp.o
 .PHONY : menu.cpp.o
 
 menu.i: menu.cpp.i
@@ -408,7 +587,7 @@ menu.i: menu.cpp.i
 
 # target to preprocess a source file
 menu.cpp.i:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/menu.cpp.i
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/menu.cpp.i
 .PHONY : menu.cpp.i
 
 menu.s: menu.cpp.s
@@ -417,7 +596,7 @@ menu.s: menu.cpp.s
 
 # target to generate assembly for a file
 menu.cpp.s:
-	$(MAKE) -f CMakeFiles/The_Prisoner_Game.dir/build.make CMakeFiles/The_Prisoner_Game.dir/menu.cpp.s
+	$(MAKE) -f CMakeFiles/menu2.dir/build.make CMakeFiles/menu2.dir/menu.cpp.s
 .PHONY : menu.cpp.s
 
 # Help Target
@@ -426,36 +605,53 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... menu"
 	@echo "... edit_cache"
-	@echo "... The_Prisoner_Game"
-	@echo "... Drawable.o"
-	@echo "... Drawable.i"
-	@echo "... Drawable.s"
+	@echo "... menu2"
+	@echo "... rebuild_cache"
+	@echo "... runTests"
+	@echo "... gtest_main"
+	@echo "... gtest"
+	@echo "... Achievement.o"
+	@echo "... Achievement.i"
+	@echo "... Achievement.s"
+	@echo "... Client.o"
+	@echo "... Client.i"
+	@echo "... Client.s"
+	@echo "... Coin.o"
+	@echo "... Coin.i"
+	@echo "... Coin.s"
 	@echo "... Enemy.o"
 	@echo "... Enemy.i"
 	@echo "... Enemy.s"
-	@echo "... Eyes.o"
-	@echo "... Eyes.i"
-	@echo "... Eyes.s"
-	@echo "... Inventory.o"
-	@echo "... Inventory.i"
-	@echo "... Inventory.s"
-	@echo "... MapLoader.o"
-	@echo "... MapLoader.i"
-	@echo "... MapLoader.s"
+	@echo "... Entity.o"
+	@echo "... Entity.i"
+	@echo "... Entity.s"
+	@echo "... GameCharacter.o"
+	@echo "... GameCharacter.i"
+	@echo "... GameCharacter.s"
 	@echo "... Mappa.o"
 	@echo "... Mappa.i"
 	@echo "... Mappa.s"
-	@echo "... Observer.o"
-	@echo "... Observer.i"
-	@echo "... Observer.s"
 	@echo "... Player.o"
 	@echo "... Player.i"
 	@echo "... Player.s"
+	@echo "... Powerup.o"
+	@echo "... Powerup.i"
+	@echo "... Powerup.s"
 	@echo "... Projectile.o"
 	@echo "... Projectile.i"
 	@echo "... Projectile.s"
+	@echo "... Strategy.o"
+	@echo "... Strategy.i"
+	@echo "... Strategy.s"
+	@echo "... Updater.o"
+	@echo "... Updater.i"
+	@echo "... Updater.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

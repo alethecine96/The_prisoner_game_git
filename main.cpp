@@ -4,7 +4,7 @@
 #include "menu.h"
 #include "Mappa.h"
 #include "Enemy.h"
-#include "Update.h"
+#include "Updater.h"
 #include "Powerup.h"
 #include "Client.h"
 #include "Achievement.h"
@@ -13,7 +13,6 @@
 #include <array>
 int main()
 {
-    int kill;
     std::string stringAch;
     int width=40;
     int heigth=36;
@@ -25,23 +24,22 @@ int main()
     Keyboard_Movement keyboard;
     Random_Movement random_movement;
     Follow_Movement follow_movement;
+    Patrol_Movement patrol_movement;
 
     Player player(34,50 ,4, 100,5,down, &array_of_bullet, &keyboard);
     std::vector<Enemy*> array_of_enemies; //Vettore DI Entity (qui ci sono tutti gli oggetti disegnabili)
     //riempimento array SE SI AGGIUNGONO NEMICI CAMBIARE NUMENEMIES IN OBSERVER.H
-    array_of_enemies.push_back(new Enemy (34,100,1, 10, 1, down, &array_of_bullet, &random_movement, &player)); // posX, posY, speed, hp, damage
-    array_of_enemies.push_back(new Enemy (450,50,1, 10, 1, down, &array_of_bullet, &random_movement, &player));
-    array_of_enemies.push_back(new Enemy (850,50,1, 10, 1, down, &array_of_bullet, &random_movement, &player));
+    array_of_enemies.push_back(new Enemy (34,100,1, 10, 1, down, &array_of_bullet, &random_movement, &player, false)); // posX, posY, speed, hp, damage
+    array_of_enemies.push_back(new Enemy (450,50,1, 10, 1, down, &array_of_bullet, &random_movement, &player, false));
+    array_of_enemies.push_back(new Enemy (450,450,1, 10, 1, down, &array_of_bullet, &patrol_movement, &player, true));
     std::vector<Powerup*> array_of_powerup;
     array_of_powerup.push_back(new Powerup (350,50, true, false));
-    array_of_powerup.push_back(new Powerup (450,550,false, true));
+    array_of_powerup.push_back(new Powerup (514,514,false, true));
 
     Mappa mappa(&array_of_enemies, &array_of_bullet,&player, &array_of_coin, &array_of_powerup); //crea oggetto mappa
     mappa.load("mappetta prova",width*heigth);
-    bool camminabile=mappa.isWalkable(12,12,1);
 
-
-    Update update(&array_of_enemies, &player, &mappa); //oggetto update
+    Updater update(&array_of_enemies, &player, &mappa); //oggetto update
 
     // Create a graphical text to display
     sf::Font font;
@@ -71,9 +69,8 @@ int main()
     textLose.setScale(2.0f, 2.0f);
 
     Achievement achievement;
-    Client one(1);
-    achievement.registerObserver(&one);
-    achievement.setState(kill, stringAch);
+    Client client(&achievement);
+    achievement.registerObserver(&client);
 
     //Create menu window
     sf::RenderWindow windowMenu(sf::VideoMode(1600,900),"Gioco");
@@ -153,25 +150,25 @@ int main()
                                 player.shoot();
                                 break;
                             case sf::Keyboard::Up: //0 down,1 left, 2 right, 3 up
-                                if(mappa.isWalkable(player.x,player.y-player.speed,player.direction))
+                                if(mappa.isWalkable(player.getPositionX(),player.getPositionY()-player.getSpeed(),player.getDirection()))
                                 {
                                     player.move(up);
                                 }
-                                    break;
+                                break;
                             case sf::Keyboard::Down:
-                                if(mappa.isWalkable(player.x,player.y+player.speed,player.direction))
+                                if(mappa.isWalkable(player.getPositionX(),player.getPositionY()+player.getSpeed(),player.getDirection()))
                                 {
                                     player.move(down);
                                 }
                                 break;
                             case sf::Keyboard::Left:
-                                if(mappa.isWalkable(player.x-player.speed,player.y,player.direction))
+                                if(mappa.isWalkable(player.getPositionX()-player.getSpeed(),player.getPositionY(),player.getDirection()))
                                 {
                                     player.move(left);
                                 }
                                 break;
                             case sf::Keyboard::Right:
-                                if(mappa.isWalkable(player.x+player.speed,player.y,player.direction))
+                                if(mappa.isWalkable(player.getPositionX()+player.getSpeed(),player.getPositionY(),player.getDirection()))
                                 {
                                     player.move(right);
                                 }
@@ -189,21 +186,6 @@ int main()
                 }
             }
 
-
-            /*int j=0;
-            if(j<1) {
-                std::vector<Enemy *>::const_iterator iterenemy;
-                int k = 0;
-                if (!array_of_enemies.empty())
-                {
-                    for (iterenemy = array_of_enemies.begin(); iterenemy != array_of_enemies.end(); iterenemy++) {
-                        (*array_of_enemies.at(k)).shoot();
-                    }
-                    k++;
-                }
-                j++;
-            }*/
-
             //Cancellazione proiettili
             std::vector<Projectile*>::const_iterator iter;
             int i = 0;
@@ -214,8 +196,8 @@ int main()
 
                     (*array_of_bullet.at(i)).move();
 
-                    if (!(mappa.isWalkable((*array_of_bullet.at(i)).getPositionX(),
-                                          (*array_of_bullet.at(i)).getPositionY(), player.getDirection())))
+                    if (!(mappa.isWalkable((array_of_bullet.at(i))->getPositionX(),
+                                          (array_of_bullet.at(i))->getPositionY(), player.getDirection())))
                     {
                         array_of_bullet.erase(array_of_bullet.begin());
                         break;
@@ -224,12 +206,13 @@ int main()
                 }
             }
             //std::cout<<gameclock.getElapsedTime().asSeconds()<<std::endl;
-            //Funzioni Update
+            //Funzioni Updater
             int playerlife= update.CollisionPlayer();
-            int numEnemies = update.CollisionProjectile(&array_of_bullet, &array_of_coin);
+
+            int kill= update.CollisionProjectile(&array_of_bullet, &array_of_coin);
             update.CollisionPickup(&array_of_coin, &array_of_powerup);
-            achievement.setState(numEnemies, stringAch);
-            textKill.setString(one.getTextAch());
+            achievement.setState(kill);
+            textKill.setString(client.getTextAch());
 
             std::vector<Enemy *>::const_iterator iterenemy;
             int k = 0;
@@ -237,46 +220,50 @@ int main()
             {
                 for (iterenemy = array_of_enemies.begin(); iterenemy != array_of_enemies.end(); iterenemy++)
                 {
-                    if(!array_of_enemies.at(k)->getAggro() || update.is_in_sight(k)>300)
+                    if(update.is_in_sight(k)>300)
                     {
-                        array_of_enemies.at(k)->SetStrategy(&random_movement);
+                        array_of_enemies.at(k)->setAggro(false);
                     }
-                    else
+                    if(array_of_enemies.at(k)->getsupervisor() && !array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)>300)
                     {
-                        array_of_enemies.at(k)->SetStrategy(&follow_movement);
+                        array_of_enemies.at(k)->setStrategy(&patrol_movement);
+                    }
+                    else if(!array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)>300 && !array_of_enemies.at(k)->getsupervisor())
+                    {
+                        array_of_enemies.at(k)->setStrategy(&random_movement);
+                    }
+                    else if(array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)<300)
+                    {
+                        array_of_enemies.at(k)->setStrategy(&follow_movement);
                     }
                     if(array_of_enemies.at(k)->getDirection()==down)
                     {
-                        array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()+array_of_enemies.at(k)->getSpeed(),0));
+                        array_of_enemies.at(k)->setCanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(),array_of_enemies.at(k)->getPositionY()+array_of_enemies.at(k)->getSpeed(),0));
                         array_of_enemies.at(k)->move();
                     }
                     else if(array_of_enemies.at(k)->getDirection()==left)
                     {
-                        array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()-array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0));
+                        array_of_enemies.at(k)->setCanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()-array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0));
                         array_of_enemies.at(k)->move();
                     }
                     else if(array_of_enemies.at(k)->getDirection()==right)
                     {
-                        array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()+array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0));
+                        array_of_enemies.at(k)->setCanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX()+array_of_enemies.at(k)->getSpeed(),array_of_enemies.at(k)->getPositionY(),0));
                         array_of_enemies.at(k)->move();
                     }
                     else if(array_of_enemies.at(k)->getDirection()==up)
                     {
-                        array_of_enemies.at(k)->setcanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(), array_of_enemies.at(k)->getPositionY() - array_of_enemies.at(k)->getSpeed(), 0));
+                        array_of_enemies.at(k)->setCanmove(mappa.isWalkable(array_of_enemies.at(k)->getPositionX(), array_of_enemies.at(k)->getPositionY() - array_of_enemies.at(k)->getSpeed(), 0));
                         array_of_enemies.at(k)->move();
                     }
                     k++;
                 }
             }
 
-
-
-
-            //std::cout<<array_of_enemies.at(0)->getAlive()<<std::endl;
             window.clear();
             window.draw(mappa);
             window.draw(textKill);
-            if(numEnemies == 0)
+            if(kill == 3)
             {
                 sf::View winview;
                 winview.setCenter(500,500);
