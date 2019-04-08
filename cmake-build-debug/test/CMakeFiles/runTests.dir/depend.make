@@ -26,6 +26,7 @@ test/CMakeFiles/runTests.dir/Tester.cpp.o: ../test/lib/googletest/include/gtest/
 test/CMakeFiles/runTests.dir/Tester.cpp.o: ../Coin.h
 test/CMakeFiles/runTests.dir/Tester.cpp.o: ../Enemy.h
 test/CMakeFiles/runTests.dir/Tester.cpp.o: ../Entity.h
+test/CMakeFiles/runTests.dir/Tester.cpp.o: ../Enumfile.h
 test/CMakeFiles/runTests.dir/Tester.cpp.o: ../GameCharacter.h
 test/CMakeFiles/runTests.dir/Tester.cpp.o: ../Mappa.h
 test/CMakeFiles/runTests.dir/Tester.cpp.o: ../Player.h

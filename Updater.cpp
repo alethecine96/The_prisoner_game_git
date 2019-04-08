@@ -27,20 +27,31 @@ int Updater::CollisionPlayer()
 
         for (int j= 0; j < 4; j++)
         {
-            Player_x += pow(j, 2) * (-14) + 42 * j + 2;
-            if (j == 0 || j == 1)
+            if(j == 0)
             {
-                Player_y += 2;
+                Player_x = player->getPositionX() + hitbox_small;
+                Player_y = player->getPositionY() + hitbox_small;
             }
-            if (j == 2 || j == 3)
+            if(j == 1)
             {
-                Player_y += 30;
+                Player_x = player->getPositionX() + hitbox_big;
+                Player_y = player->getPositionY() + hitbox_small;
+            }
+            if(j == 2)
+            {
+                Player_x = player->getPositionX() + hitbox_big;
+                Player_y = player->getPositionY() + hitbox_big;
+            }
+            if(j == 3)
+            {
+                Player_x = player->getPositionX() + hitbox_small;
+                Player_y = player->getPositionY() + hitbox_big;
             }
 
 
-            if(Player_x>=Enemy_x && Player_x<=Enemy_x+32)
+            if(Player_x>=Enemy_x && Player_x<=Enemy_x+tile_dimension)
             {
-                if (Player_y >= Enemy_y && Player_y <= Enemy_y + 32)
+                if (Player_y >= Enemy_y && Player_y <= Enemy_y + tile_dimension)
                 {
                     //std::cout << "COLLISIONE" << std::endl;
                     collision = true;
@@ -51,7 +62,7 @@ int Updater::CollisionPlayer()
         {
             if(collision)
             {
-                player->setHp(player->getHp() - (*Enemy_vector->at(i)).getDamage());
+                player->setHp(player->getHp() - Enemy_vector->at(i)->getDamage());
                 //std::cout<<"Il player ha "<<player->getHp()<<" di vita"<<std::endl;
                 playerlife=player->getHp();
             }
@@ -82,19 +93,30 @@ int Updater::CollisionProjectile(std::vector<Projectile*> *Projectile_vector, st
                 int Enemy_y = Enemy_vector->at(i)->getPositionY();
                 for (int j = 0; j < 4; j++)
                 {
-                    Proj_x += pow(j, 2) * (-14) + 42 * j + 2;
-                    if (j == 0 || j == 1)
+                    if (j == 0)
                     {
-                        Proj_y += 2;
+                        Proj_y = Projectile_vector->at(0)->getPositionY() + hitbox_small;
+                        Proj_x = Projectile_vector->at(0)->getPositionX() + hitbox_small;
                     }
-                    if (j == 2 || j == 3)
+                    else if(j == 1)
                     {
-                        Proj_y += 30;
+                        Proj_y = Projectile_vector->at(0)->getPositionY() + hitbox_small;
+                        Proj_x = Projectile_vector->at(0)->getPositionX() + hitbox_big;
+                    }
+                    else if (j == 2)
+                    {
+                        Proj_y = Projectile_vector->at(0)->getPositionY() + hitbox_big;
+                        Proj_x = Projectile_vector->at(0)->getPositionX() + hitbox_big;
+                    }
+                    else if(j == 3)
+                    {
+                        Proj_y = Projectile_vector->at(0)->getPositionY() + hitbox_big;
+                        Proj_x = Projectile_vector->at(0)->getPositionX() + hitbox_small;
                     }
 
-                    if (Proj_x >= Enemy_x && Proj_x <= Enemy_x + 32)
+                    if (Proj_x >= Enemy_x && Proj_x <= Enemy_x + tile_dimension)
                     {
-                        if (Proj_y >= Enemy_y && Proj_y <= Enemy_y + 32)
+                        if (Proj_y >= Enemy_y && Proj_y <= Enemy_y + tile_dimension)
                         {
                             //std::cout << "COLLISIONE PROIETTILI" << std::endl;
                             collision = true;
@@ -108,14 +130,14 @@ int Updater::CollisionProjectile(std::vector<Projectile*> *Projectile_vector, st
                 {
                     if (collision)
                     {
-                        (*Enemy_vector->at(i)).setAggro(true);
-                        (*Enemy_vector->at(i)).setHp((*Enemy_vector->at(i)).getHp() - player->getDamage());
+                        Enemy_vector->at(i)->setAggro(true);
+                        Enemy_vector->at(i)->setHp(Enemy_vector->at(i)->getHp() - player->getDamage());
                         //std::cout << "Il nemico " << i << " ha " << (Enemy_vector->at(i))->getHp() << " di vita" << std::endl;
-                        (*Projectile_vector->at(projectile_counter)).setDestroy(true);
+                        Projectile_vector->at(projectile_counter)->setDestroy(true);
                         collision = false;
-                        if ((*Enemy_vector->at(i)).getHp() <= 0)
+                        if (Enemy_vector->at(i)->getHp() <= 0)
                         {
-                            (*Enemy_vector->at(i)).setAlive(false);
+                            Enemy_vector->at(i)->setAlive(false);
                         }
                     }
                     projectile_counter++;
@@ -129,7 +151,7 @@ int Updater::CollisionProjectile(std::vector<Projectile*> *Projectile_vector, st
         int projectile_counter=0;
         for(iter2=Projectile_vector->begin(); iter2!=Projectile_vector->end(); iter2++)
         {
-            if((*Projectile_vector->at(projectile_counter)).getDestroy()==true)
+            if(Projectile_vector->at(projectile_counter)->getDestroy()==true)
             {
                 Projectile_vector->erase(iter2);
                 break;
@@ -144,7 +166,7 @@ int Updater::CollisionProjectile(std::vector<Projectile*> *Projectile_vector, st
         {
             if(!Enemy_vector->at(j)->getAlive())
             {
-                Coin_vector->push_back(new Coin((*Enemy_vector->at(j)).getPositionX(), (*Enemy_vector->at(j)).getPositionY(),5)); //drop coin
+                Coin_vector->push_back(new Coin(Enemy_vector->at(j)->getPositionX(), Enemy_vector->at(j)->getPositionY(),5)); //drop coin
                 kill=kill+1;
                 Enemy_vector->erase(iter3);
                 break;
@@ -170,19 +192,30 @@ void Updater::CollisionPickup(std::vector<Coin*> *Coin_vector, std::vector<Power
         int Player_y = player->getPositionY();
         for (int j = 0; j < 4; j++)
         {
-            Coin_x += pow(j, 2) * (-14) + 42 * j + 2;
-            if (j == 0 || j == 1)
+            if (j == 0)
             {
-                Coin_y += 2;
+                Coin_y = Coin_vector->at(0)->getPositionY() + hitbox_small;
+                Coin_x = Coin_vector->at(0)->getPositionX() + hitbox_small;
             }
-            if (j == 2 || j == 3)
+            else if(j == 1)
             {
-                Coin_y += 30;
+                Coin_y = Coin_vector->at(0)->getPositionY() + hitbox_small;
+                Coin_x = Coin_vector->at(0)->getPositionX() + hitbox_big;
+            }
+            else if (j == 2)
+            {
+                Coin_y = Coin_vector->at(0)->getPositionY() + hitbox_big;
+                Coin_x = Coin_vector->at(0)->getPositionX() + hitbox_big;
+            }
+            else if(j == 3)
+            {
+                Coin_y = Coin_vector->at(0)->getPositionY() + hitbox_big;
+                Coin_x = Coin_vector->at(0)->getPositionX() + hitbox_small;
             }
 
-            if (Coin_x >= Player_x && Coin_x <= Player_x + 32)
+            if (Coin_x >= Player_x && Coin_x <= Player_x + tile_dimension)
             {
-                if (Coin_y >= Player_y && Coin_y <= Player_y + 32)
+                if (Coin_y >= Player_y && Coin_y <= Player_y + tile_dimension)
                 {
                     //std::cout << "COLLISIONE COIN" << std::endl;
                     collision = true;
@@ -196,7 +229,7 @@ void Updater::CollisionPickup(std::vector<Coin*> *Coin_vector, std::vector<Power
             if (collision)
             {
                 player->wallet = player->wallet + Coin_vector->at(0)->getValue();
-                (*Coin_vector->at(coin_counter)).setDestroy(true);
+                Coin_vector->at(coin_counter)->setDestroy(true);
                 collision = false;
             }
             coin_counter++;
@@ -232,19 +265,29 @@ void Updater::CollisionPickup(std::vector<Coin*> *Coin_vector, std::vector<Power
             int Player_y = player->getPositionY();
             for (int j = 0; j < 4; j++)
             {
-                Powerup_x += pow(j, 2) * (-14) + 42 * j + 2;
-                if (j == 0 || j == 1)
+                if (j == 0)
                 {
-                    Powerup_y += 2;
+                    Powerup_y = Powerup_vector->at(i)->getPositionY() + hitbox_small;
+                    Powerup_x = Powerup_vector->at(i)->getPositionX() + hitbox_small;
                 }
-                if (j == 2 || j == 3)
+                else if(j == 1)
                 {
-                    Powerup_y += 30;
+                    Powerup_y = Powerup_vector->at(i)->getPositionY() + hitbox_small;
+                    Powerup_x = Powerup_vector->at(i)->getPositionX() + hitbox_big;
                 }
-
-                if (Powerup_x >= Player_x && Powerup_x <= Player_x + 32)
+                else if (j == 2)
                 {
-                    if (Powerup_y >= Player_y && Powerup_y <= Player_y + 32)
+                    Powerup_y = Powerup_vector->at(i)->getPositionY() + hitbox_big;
+                    Powerup_x = Powerup_vector->at(i)->getPositionX() + hitbox_big;
+                }
+                else if(j == 3)
+                {
+                    Powerup_y = Powerup_vector->at(i)->getPositionY() + hitbox_big;
+                    Powerup_x = Powerup_vector->at(i)->getPositionX() + hitbox_small;
+                }
+                if (Powerup_x >= Player_x && Powerup_x <= Player_x + tile_dimension)
+                {
+                    if (Powerup_y >= Player_y && Powerup_y <= Player_y + tile_dimension)
                     {
                         //std::cout << "COLLISIONE POWERUP" << std::endl;
                         collision1 = true;
@@ -260,7 +303,7 @@ void Updater::CollisionPickup(std::vector<Coin*> *Coin_vector, std::vector<Power
                     if (collision1)
                     {
                         player->wallet=player->wallet-Powerup_vector->at(i)->getPrice();
-                        (*Powerup_vector->at(powerup_counter)).setDestroy(true);
+                        Powerup_vector->at(powerup_counter)->setDestroy(true);
                         collision1 = false;
                         if(Powerup_vector->at(i)->getHeal()==true)
                         {
@@ -282,7 +325,7 @@ void Updater::CollisionPickup(std::vector<Coin*> *Coin_vector, std::vector<Power
         int powerup_counter = 0;
         for (iter4 = Powerup_vector->begin(); iter4 != Powerup_vector->end(); iter4++)
         {
-            if ((*Powerup_vector->at(powerup_counter)).getDestroy() == true)
+            if (Powerup_vector->at(powerup_counter)->getDestroy() == true)
             {
                 Powerup_vector->erase(iter4);
                 break;

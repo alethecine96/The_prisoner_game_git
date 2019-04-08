@@ -13,16 +13,11 @@
 
 void Mappa::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-
-
-    int width=40;
-    int height=36;
     sf::Clock clock;
     sf::Time elapsedtime = clock.getElapsedTime();
     sf::Texture m_tileset;
     sf::VertexArray m_vertices;
-    sf::Vector2u tileSize = sf::Vector2u(32, 32);
-
+    sf::Vector2u tileSize = sf::Vector2u(tile_dimension, tile_dimension);
 
     if (!m_tileset.loadFromFile("tilesetmod2.png"))
         return;
@@ -133,27 +128,38 @@ bool Mappa::isWalkable(int x, int y, int direction)
 {
 
 
-    int width=40;
-    int walkableTiles[] = {0, 58, 97};  //Tile Calpestabili
-    int s = 3;
+
+    int walkableTiles[] = {tiled_floor, door, grass, parquet, gym_mat, bath_floor, shower_floor, kitchen_floor};  //Tile Calpestabili
 
     int oldX=x;
     int oldY=y;
     for (int j = 0; j < 4; j++)
     {           //COLLISION!!
 
-        x=oldX;
-        y=oldY;
-
-        x += pow(j, 2) * (-14) + 42 * j+2;
-        if (j == 0 || j == 1)
-            y += 2;
-        if (j==2 || j==3)
-            y += 30;
-        int a = (x / 32);
-        int b = (y / 32);
+        if(j == 0)
+        {
+            x = oldX + hitbox_small;
+            y = oldY + hitbox_small;
+        }
+        if(j == 1)
+        {
+            x = oldX + hitbox_big;
+            y = oldY + hitbox_small;
+        }
+        if(j == 2)
+        {
+            x = oldX + hitbox_big;
+            y = oldY + hitbox_big;
+        }
+        if(j == 3)
+        {
+            x = oldX + hitbox_small;
+            y = oldY + hitbox_big;
+        }
+        int a = (x / tile_dimension);
+        int b = (y / tile_dimension);
         bool walkable = false;
-        for (int i = 0; i < s; i++)
+        for (int i = 0; i < number_walkable_tiles; i++)
         {
             if (map[(b * width) + a] == walkableTiles[i])
                 walkable = true;

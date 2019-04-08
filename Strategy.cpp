@@ -6,7 +6,7 @@
 #include "Strategy.h"
 
 void Keyboard_Movement::strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed)
-{ //0 down,1 left, 2 right, 3 up
+{
     if(direction==down)
     {
         whomove->setDirection(down);
@@ -64,7 +64,6 @@ void Random_Movement::strategy_move(int direction, GameCharacter *whomove, GameC
 
 void Follow_Movement::strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed)//TODO da cambiare nome al secondo
 {
-    int range=14;
     if (abs(who_is_followed->getPositionX() - whomove->getPositionX())<range)      //nel range di X
     {
         if (who_is_followed->getPositionY() < whomove->getPositionY())
@@ -104,21 +103,19 @@ void Follow_Movement::strategy_move(int direction, GameCharacter *whomove, GameC
 }
 
 void Patrol_Movement::strategy_move(int direction, GameCharacter *whomove, GameCharacter *who_is_followed) {
-    int powerupX=514;
-    int powerupY=514;
-    if(whomove->getPositionX()<powerupX+64 && whomove->getPositionY()<powerupY-64)
+    if(whomove->getPositionX()<powerupX+double_tile_dimension && whomove->getPositionY()<powerupY-double_tile_dimension)
     {
         whomove->setDirection(right);
     }
-    else if(whomove->getPositionX()==powerupX+64 && whomove->getPositionY()<powerupY+64)
+    else if(whomove->getPositionX()==powerupX+double_tile_dimension && whomove->getPositionY()<powerupY+double_tile_dimension)
     {
         whomove->setDirection(down);
     }
-    else if(whomove->getPositionY() == powerupY+64 && whomove->getPositionX()>powerupX-64)
+    else if(whomove->getPositionY() == powerupY+double_tile_dimension && whomove->getPositionX()>powerupX-double_tile_dimension)
     {
         whomove->setDirection(left);
     }
-    else if(whomove->getPositionX() == powerupX-64 && whomove->getPositionY()>powerupY-64)
+    else if(whomove->getPositionX() == powerupX-double_tile_dimension && whomove->getPositionY()>powerupY-double_tile_dimension)
     {
         whomove->setDirection(up);
     }

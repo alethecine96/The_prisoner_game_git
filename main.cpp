@@ -11,11 +11,9 @@
 #include "Observer.h"
 #include "Subject.h"
 #include <array>
-int main()
+int main()  //TODO fare enumfile con tutti i numeri magici
 {
     std::string stringAch;
-    int width=40;
-    int heigth=36;
     std::vector<Projectile*> array_of_bullet;
 
     std::vector<Coin*> array_of_coin;
@@ -37,7 +35,7 @@ int main()
     array_of_powerup.push_back(new Powerup (514,514,false, true));
 
     Mappa mappa(&array_of_enemies, &array_of_bullet,&player, &array_of_coin, &array_of_powerup); //crea oggetto mappa
-    mappa.load("mappetta prova",width*heigth);
+    mappa.load("mappetta prova",width*height);
 
     Updater update(&array_of_enemies, &player, &mappa); //oggetto update
 
@@ -73,7 +71,7 @@ int main()
     achievement.registerObserver(&client);
 
     //Create menu window
-    sf::RenderWindow windowMenu(sf::VideoMode(1600,900),"Gioco");
+    sf::RenderWindow windowMenu(sf::VideoMode(window_width,window_height),"Gioco");
     windowMenu.setVerticalSyncEnabled(true);
     int chooseMenu;
     Menu menu(windowMenu.getSize().x, windowMenu.getSize().y);
@@ -127,7 +125,7 @@ int main()
 
 
     //Finestra gioco
-    sf::RenderWindow window(sf::VideoMode(1280, 704), "Game"); //crea la finestra con il gioco
+    sf::RenderWindow window(sf::VideoMode(game_window_width,game_window_height), "Game"); //crea la finestra con il gioco
 
 
     if(chooseMenu==1)
@@ -149,7 +147,7 @@ int main()
                             case sf::Keyboard::Space:
                                 player.shoot();
                                 break;
-                            case sf::Keyboard::Up: //0 down,1 left, 2 right, 3 up
+                            case sf::Keyboard::Up:
                                 if(mappa.isWalkable(player.getPositionX(),player.getPositionY()-player.getSpeed(),player.getDirection()))
                                 {
                                     player.move(up);
@@ -220,19 +218,19 @@ int main()
             {
                 for (iterenemy = array_of_enemies.begin(); iterenemy != array_of_enemies.end(); iterenemy++)
                 {
-                    if(update.is_in_sight(k)>300)
+                    if(update.is_in_sight(k)>sight)
                     {
                         array_of_enemies.at(k)->setAggro(false);
                     }
-                    if(array_of_enemies.at(k)->getsupervisor() && !array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)>300)
+                    if(array_of_enemies.at(k)->getsupervisor() && !array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)>sight)
                     {
                         array_of_enemies.at(k)->setStrategy(&patrol_movement);
                     }
-                    else if(!array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)>300 && !array_of_enemies.at(k)->getsupervisor())
+                    else if(!array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)>sight && !array_of_enemies.at(k)->getsupervisor())
                     {
                         array_of_enemies.at(k)->setStrategy(&random_movement);
                     }
-                    else if(array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)<300)
+                    else if(array_of_enemies.at(k)->getAggro() && update.is_in_sight(k)<sight)
                     {
                         array_of_enemies.at(k)->setStrategy(&follow_movement);
                     }

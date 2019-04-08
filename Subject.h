@@ -10,21 +10,13 @@
 class Subject
 {
 public:
-    /**
-     * Registra un observer
-     * @param observer l'oggetto observer da registrare
-     */
+    //register observer
     virtual void registerObserver(Observer *observer) = 0;
 
-    /**
-     * Rimuove un observer
-     * @param observer l'oggetto observer da cancellare
-     */
+    //remove observer
     virtual void removeObserver(Observer *observer) = 0;
 
-    /**
-     * Notifica tutti gli observer registrati
-     */
+    //notify registered observers
     virtual void notifyObservers() = 0;
 
 protected:

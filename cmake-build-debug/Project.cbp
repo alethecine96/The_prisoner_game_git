@@ -350,6 +350,9 @@
 		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Entity.h">
 			<Option target="menu2"/>
 		</Unit>
+		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h">
+			<Option target="menu2"/>
+		</Unit>
 		<Unit filename="/home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.cpp">
 			<Option target="menu2"/>
 		</Unit>

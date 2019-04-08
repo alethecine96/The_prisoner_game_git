@@ -7,7 +7,7 @@
 
 
 #include <SFML/Graphics/Drawable.hpp>
-enum direction{down=0,left=1,right=2,up=3};
+#include "Enumfile.h"
 
 class Entity : public sf::Drawable
 {

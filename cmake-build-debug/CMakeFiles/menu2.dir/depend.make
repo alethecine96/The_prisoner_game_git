@@ -15,10 +15,12 @@ CMakeFiles/menu2.dir/Client.cpp.o: ../Subject.h
 CMakeFiles/menu2.dir/Coin.cpp.o: ../Coin.cpp
 CMakeFiles/menu2.dir/Coin.cpp.o: ../Coin.h
 CMakeFiles/menu2.dir/Coin.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Coin.cpp.o: ../Enumfile.h
 
 CMakeFiles/menu2.dir/Enemy.cpp.o: ../Enemy.cpp
 CMakeFiles/menu2.dir/Enemy.cpp.o: ../Enemy.h
 CMakeFiles/menu2.dir/Enemy.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Enemy.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Enemy.cpp.o: ../GameCharacter.h
 CMakeFiles/menu2.dir/Enemy.cpp.o: ../Player.h
 CMakeFiles/menu2.dir/Enemy.cpp.o: ../Powerup.h
@@ -27,14 +29,17 @@ CMakeFiles/menu2.dir/Enemy.cpp.o: ../Strategy.h
 
 CMakeFiles/menu2.dir/Entity.cpp.o: ../Entity.cpp
 CMakeFiles/menu2.dir/Entity.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Entity.cpp.o: ../Enumfile.h
 
 CMakeFiles/menu2.dir/GameCharacter.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/GameCharacter.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/GameCharacter.cpp.o: ../GameCharacter.cpp
 CMakeFiles/menu2.dir/GameCharacter.cpp.o: ../GameCharacter.h
 
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../Coin.h
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../Enemy.h
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Mappa.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../GameCharacter.h
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../Mappa.cpp
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../Mappa.h
@@ -44,6 +49,7 @@ CMakeFiles/menu2.dir/Mappa.cpp.o: ../Projectile.h
 CMakeFiles/menu2.dir/Mappa.cpp.o: ../Strategy.h
 
 CMakeFiles/menu2.dir/Player.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Player.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Player.cpp.o: ../GameCharacter.h
 CMakeFiles/menu2.dir/Player.cpp.o: ../Player.cpp
 CMakeFiles/menu2.dir/Player.cpp.o: ../Player.h
@@ -51,14 +57,17 @@ CMakeFiles/menu2.dir/Player.cpp.o: ../Projectile.h
 CMakeFiles/menu2.dir/Player.cpp.o: ../Strategy.h
 
 CMakeFiles/menu2.dir/Powerup.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Powerup.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Powerup.cpp.o: ../Powerup.cpp
 CMakeFiles/menu2.dir/Powerup.cpp.o: ../Powerup.h
 
 CMakeFiles/menu2.dir/Projectile.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Projectile.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Projectile.cpp.o: ../Projectile.cpp
 CMakeFiles/menu2.dir/Projectile.cpp.o: ../Projectile.h
 
 CMakeFiles/menu2.dir/Strategy.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Strategy.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Strategy.cpp.o: ../GameCharacter.h
 CMakeFiles/menu2.dir/Strategy.cpp.o: ../Strategy.cpp
 CMakeFiles/menu2.dir/Strategy.cpp.o: ../Strategy.h
@@ -66,6 +75,7 @@ CMakeFiles/menu2.dir/Strategy.cpp.o: ../Strategy.h
 CMakeFiles/menu2.dir/Updater.cpp.o: ../Coin.h
 CMakeFiles/menu2.dir/Updater.cpp.o: ../Enemy.h
 CMakeFiles/menu2.dir/Updater.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/Updater.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/Updater.cpp.o: ../GameCharacter.h
 CMakeFiles/menu2.dir/Updater.cpp.o: ../Mappa.h
 CMakeFiles/menu2.dir/Updater.cpp.o: ../Player.h
@@ -76,6 +86,7 @@ CMakeFiles/menu2.dir/Updater.cpp.o: ../Updater.cpp
 CMakeFiles/menu2.dir/Updater.cpp.o: ../Updater.h
 
 CMakeFiles/menu2.dir/menu.cpp.o: ../Entity.h
+CMakeFiles/menu2.dir/menu.cpp.o: ../Enumfile.h
 CMakeFiles/menu2.dir/menu.cpp.o: ../GameCharacter.h
 CMakeFiles/menu2.dir/menu.cpp.o: ../Player.h
 CMakeFiles/menu2.dir/menu.cpp.o: ../Projectile.h

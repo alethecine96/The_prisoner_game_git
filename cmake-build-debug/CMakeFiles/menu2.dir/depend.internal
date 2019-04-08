@@ -16,10 +16,12 @@ CMakeFiles/menu2.dir/Coin.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Coin.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Coin.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
 CMakeFiles/menu2.dir/Enemy.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Enemy.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Enemy.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Player.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Powerup.h
@@ -28,14 +30,17 @@ CMakeFiles/menu2.dir/Enemy.cpp.o
 CMakeFiles/menu2.dir/Entity.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
 CMakeFiles/menu2.dir/GameCharacter.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
 CMakeFiles/menu2.dir/Mappa.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Coin.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Enemy.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Mappa.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Mappa.h
@@ -45,6 +50,7 @@ CMakeFiles/menu2.dir/Mappa.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Strategy.h
 CMakeFiles/menu2.dir/Player.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Player.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Player.h
@@ -52,14 +58,17 @@ CMakeFiles/menu2.dir/Player.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Strategy.h
 CMakeFiles/menu2.dir/Powerup.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Powerup.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Powerup.h
 CMakeFiles/menu2.dir/Projectile.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Projectile.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Projectile.h
 CMakeFiles/menu2.dir/Strategy.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Strategy.cpp
  /home/alessandro/Scaricati/Prova 4.1/menu/Strategy.h
@@ -67,6 +76,7 @@ CMakeFiles/menu2.dir/Updater.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Coin.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Enemy.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Mappa.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Player.h
@@ -77,6 +87,7 @@ CMakeFiles/menu2.dir/Updater.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Updater.h
 CMakeFiles/menu2.dir/menu.cpp.o
  /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
+ /home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
  /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Player.h
  /home/alessandro/Scaricati/Prova 4.1/menu/Projectile.h

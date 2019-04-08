@@ -20,7 +20,7 @@ class Player : public GameCharacter
 public:
     Player(int x,int y, int speed, int hp, int damage, int direction, std::vector<Projectile*> *Projectile_vector, Strategy *strategy) : GameCharacter(x, y, speed, hp, damage, direction)
     {
-        step=0;//FIXME enum
+        step=0;
         this->Projectile_vector=Projectile_vector;
         this->strategy=strategy;
     };

@@ -24,7 +24,7 @@ public:
     Enemy(int x,int y, int speed,int hp, int damage, int direction, std::vector<Projectile*> *Projectile_vector, Strategy *strategy, Player *player, bool supervisor) : GameCharacter(x, y, speed, hp, damage, direction)
     {
         this->damage=damage;
-        step=0;//FIXME enum
+        step=0;
         this->Projectile_vector=Projectile_vector;
         this->strategy=strategy;
         this->player=player;
@@ -37,7 +37,6 @@ public:
     bool setAggro(bool aggro);
     bool setAlive(bool alive);
     bool getAlive();
-    void shoot();
     void move();
 
     void setCanmove(bool canmove);

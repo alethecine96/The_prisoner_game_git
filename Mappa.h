@@ -12,6 +12,7 @@
 #include "Enemy.h"
 #include "Powerup.h"
 #include "Coin.h"
+#include "Enumfile.h"
 #include <iostream>
 #include <fstream>
 #include <iostream>

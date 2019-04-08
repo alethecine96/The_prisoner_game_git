@@ -6,6 +6,7 @@ CMakeFiles/menu.dir/main.cpp.o: ../Client.h
 CMakeFiles/menu.dir/main.cpp.o: ../Coin.h
 CMakeFiles/menu.dir/main.cpp.o: ../Enemy.h
 CMakeFiles/menu.dir/main.cpp.o: ../Entity.h
+CMakeFiles/menu.dir/main.cpp.o: ../Enumfile.h
 CMakeFiles/menu.dir/main.cpp.o: ../GameCharacter.h
 CMakeFiles/menu.dir/main.cpp.o: ../Mappa.h
 CMakeFiles/menu.dir/main.cpp.o: ../Observer.h

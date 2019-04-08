@@ -15,7 +15,7 @@ Menu::Menu(float width, float height)
         std::cout << "Texture Error" << std::endl;
     }
     backgroundS.setTexture(background);
-    backgroundS.setPosition(0,0);
+    backgroundS.setPosition(origin,origin);
 
     menu[0].setFont(font);
     menu[0].setColor(sf::Color::Green);

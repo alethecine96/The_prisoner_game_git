@@ -59,6 +59,10 @@ Powerup.h
 /home/alessandro/Scaricati/Prova 4.1/menu/Entity.h
 SFML/Graphics/Drawable.hpp
 -
+Enumfile.h
+/home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
+
+/home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
 
 /home/alessandro/Scaricati/Prova 4.1/menu/GameCharacter.h
 Entity.h
@@ -77,6 +81,8 @@ Powerup.h
 /home/alessandro/Scaricati/Prova 4.1/menu/Powerup.h
 Coin.h
 /home/alessandro/Scaricati/Prova 4.1/menu/Coin.h
+Enumfile.h
+/home/alessandro/Scaricati/Prova 4.1/menu/Enumfile.h
 iostream
 -
 fstream
